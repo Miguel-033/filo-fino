@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filo Fino · Servicio de Afilado y Reparación</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container">
+        <!-- Логотип -->
+        <a class="navbar-brand fw-bold" href="#">Filo Fino</a>
+
+        <!-- Навигация для десктопа -->
+        <div class="d-none d-lg-block ">
+          <ul class="navbar-nav ms-auto flex-row">
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#services">Servicios</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tarifas">Tarifas</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#catalogo">Productos</a> -->
+            </li>
+
+            <!-- Dropdown Nosotros -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarNosotros"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Nosotros
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <!-- <a class="dropdown-item" href="#why">¿Por qué elegirnos?</a> -->
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#about">Sobre nosotros</a>
+                </li>
+                <li><a class="dropdown-item" href="#proceso">Proceso</a></li>
+                <li>
+                  <!-- <a class="dropdown-item" href="#testimonios">Opiniones</a> -->
+                </li>
+                <!-- <li><a class="dropdown-item" href="#faq">FAQ</a></li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        <a class="" href="tel:+34625892626">625892626</a>
+
+        </div>
+
+
+        <!-- Кнопка-бургер (только на мобилке) -->
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          id="burgerToggle"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Overlay меню для мобильных -->
+    <div id="burgerMenu" class="burger-overlay">
+      <button class="close-btn" id="closeBurger">&times;</button>
+      <ul>
+        <!-- <li><a href="#services">Servicios</a></li> -->
+        <li><a href="#tarifas">Tarifas</a></li>
+        <!-- <li><a href="#catalogo">Productos</a></li> -->
+        <!-- <li><a href="#why">¿Por qué elegirnos?</a></li> -->
+        <li><a href="#about">Sobre nosotros</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <!-- <li><a href="#testimonios">Opiniones</a></li> -->
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li class="nav-item ms-3">
+          <button id="cartButton" class="btn-cart position-relative">
+            <i class="bi bi-cart3"></i>
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hero -->
+    <header
+      class="hero d-flex align-items-center justify-content-center text-center"
+    >
+      <div class="container down" data-aos="fade-up">
+        <h1 class="display-4 fw-bold text-white">
+          Servicio de afilado y reparación
+        </h1>
+        <p class="lead text-light">
+          Manicura · Peluquería · Cuchillos · Equipos
+        </p>
+        <!-- <button
+          class="btn btn-primary btn-lg mt-3"
+          data-bs-toggle="modal"
+          data-bs-target="#orderModal"
+        >
+          📌 Hacer pedido
+        </button> -->
+      </div>
+    </header>
+
+    <!-- Why -->
+    <section id="why" class="py-5" data-aos="fade-up">
+      <div class="container text-center">
+        <h2 class="mb-4">¿Por qué elegirnos?</h2>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <h5 class="mt-3">Servicio rápido</h5>
+            <p>La mayoría de los pedidos se completan en 1-2 días.</p>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+            <h5 class="mt-3">Alta calidad</h5>
+            <p>Utilizamos equipos profesionales y técnicas precisas.</p>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <h5 class="mt-3">Garantía</h5>
+            <p>Corrección gratuita si el instrumento no funciona en 7 días.</p>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+            <h5 class="mt-3">Experiencia</h5>
+            <p>Más de 10 años en el sector de afilado y reparación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-start" data-aos="fade-up">
+          <!-- Левая колонка с изображением -->
+          <div class="col-md-6" data-aos="fade-right">
+            <img
+              src="images/taller.jpg"
+              alt="Taller de afilado"
+              class="img-fluid rounded shadow-sm"
+            />
+          </div>
+
+          <!-- Правая колонка с текстом -->
+          <div class="col-md-6" data-aos="fade-left">
+            <h2 class="fw-bold mb-3">Sobre nosotros</h2>
+            <p>
+              En <strong>Filo Fino</strong> nos especializamos en el afilado y la
+              reparación de herramientas de manicura, peluquería y cocina.
+              Nuestro taller en Valencia combina la experiencia artesanal con
+              tecnología moderna para ofrecer resultados precisos y duraderos.
+            </p>
+            <p>
+              Sabemos lo importante que es para un profesional trabajar con
+              herramientas en perfecto estado. Por eso garantizamos cortes
+              limpios y suaves, prolongando la vida útil de tus tijeras,
+              alicates y cuchillos.
+            </p>
+            <p>
+              Con más de 10 años de experiencia, cientos de clientes satisfechos
+              y garantía en cada servicio, somos tu aliado de confianza en el
+              cuidado de tus herramientas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="py-5" data-aos="fade-up">
+      <div class="container text-center">
+        <h2 class="mb-4">Cómo trabajamos</h2>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="display-6 fw-bold textPrimary">1</h1>
+            <p>
+              Recibimos tus herramientas en el taller o mediante mensajería.
+            </p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="display-6 fw-bold textPrimary">2</h1>
+            <p>
+              Realizamos un <strong>diagnóstico completo</strong> para detectar
+              desgastes o problemas en el filo.
+            </p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <h1 class="display-6 fw-bold textPrimary">3</h1>
+            <p>
+              Llevamos a cabo el <strong>afilado y la reparación</strong> con
+              maquinaria profesional.
+            </p>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="display-6 fw-bold textPrimary">4</h1>
+            <p>
+              Entregamos las herramientas listas con garantía de satisfacción.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarifas -->
+    <section id="tarifas" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Tarifas orientativas</h2>
+        <p class="text-center mb-4">
+          Ofrecemos precios justos y transparentes para el
+          <strong>afilado de herramientas profesionales</strong>. Estas tarifas
+          sirven como referencia:
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-5">
+            <ul class="list-group shadow">
+              <li class="list-group-item d-flex justify-content-between">
+                Afilado de alicates <span>desde €8</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                Tijeras de manicura <span>desde €7</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                Tijeras de peluquería <span>desde €17</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                Cuchillos de cocina <span>desde €5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                Reparación básica <span>desde €10</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <!-- <section id="services" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Nuestros servicios</h2>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100">
+              <img
+                src="./images/Herramientas-manicura-acero-inoxidable.jpg"
+                class="card-img-top"
+                alt="Manicura"
+              />
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Afilado de manicura</h5>
+                <p class="card-text">
+                  Alicates y tijeras con precisión y suavidad en cada corte.
+                </p>
+                <button class="btn btn-outline-primary mt-auto">Ordenar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card h-100">
+              <img
+                src="./images/tijera-de-peluqueria-sculpby-gothik-55-.jpg"
+                class="card-img-top"
+                alt="Peluquería"
+              />
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Tijeras de peluquería</h5>
+                <p class="card-text">
+                  Filo profesional para peluqueros y barberos.
+                </p>
+                <button class="btn btn-outline-primary mt-auto">Ordenar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card h-100">
+              <img
+                src="./images/cuchillos-15mm-12mm-33-30-24cm.jpg"
+                class="card-img-top"
+                alt="Cuchillos"
+              />
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Afilado de cuchillos</h5>
+                <p class="card-text">
+                  Cuchillos de cocina y profesionales con filo perfecto.
+                </p>
+                <button class="btn btn-outline-primary mt-auto">Ordenar</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card h-100">
+              <img
+                src="./images/Reparación de equipos.jpg"
+                class="card-img-top"
+                alt="Reparación"
+              />
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Reparación de equipos</h5>
+                <p class="card-text">
+                  Mantenimiento seguro y duradero de tus equipos.
+                </p>
+                <button class="btn btn-outline-primary mt-auto">Ordenar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Catálogo -->
+    <!-- <section id="catalogo" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Catálogo de productos</h2>
+        <div id="product-list" class="row g-4"></div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="shop.html" class="btn btnPrimary btn-lg">🛒 Ver todo</a>
+      </div>
+    </section> -->
+
+    <!-- Opiniones -->
+    <!-- <section id="testimonios" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Opiniones de clientes</h2>
+        <div class="carousel-inner text-center">
+          <p class="lead">
+            “El mejor afilado en Valencia, rápido y profesional.”
+          </p>
+          <h6>- Carlos, chef</h6>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- CTA -->
+    <section class="py-5 text-center bg-primary text-white" data-aos="fade-up">
+      <div class="container">
+        <h2 class="mb-3">¿Necesitas afilar tus herramientas?</h2>
+        <p class="mb-4">
+          Envíanos un mensaje y recupera la precisión de tus tijeras y alicates.
+        </p>
+        <a
+          href="https://wa.me/34600111222"
+          target="_blank"
+          class="btn btn-light btn-lg"
+          >📩 Contactar por WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Últimos artículos</h2>
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1607083208173-3d2f1a0c9340?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top"
+                alt="Afilar tijeras"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">¿Cuándo afilar tus tijeras?</h5>
+                <p class="card-text flex-grow-1">
+                  Señales de que tus tijeras necesitan afilado.
+                </p>
+                <a href="#" class="btn btn-outline-primary leer-mas" data-id="1">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1612277799987-92d69d9d0f6b?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top"
+                alt="Cuidado de herramientas"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Cómo cuidar tus herramientas</h5>
+                <p class="card-text flex-grow-1">
+                  Consejos de limpieza y lubricación para prolongar la vida
+                  útil.
+                </p>
+                <a href="#" class="btn btn-outline-primary leer-mas" data-id="2">Leer más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1621273420101-5a65bfbef3d3?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top"
+                alt="Errores de afilado casero"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Errores comunes en casa</h5>
+                <p class="card-text flex-grow-1">
+                  Por qué no debes afilar tijeras y cuchillos en casa.
+                </p>
+                <a href="#" class="btn btn-outline-primary leer-mas" data-id="3">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-5 bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Preguntas frecuentes</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                ¿Cuánto tarda el afilado?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show">
+              <div class="accordion-body">Normalmente entre 1 y 2 días.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                ¿Ofrecen garantía?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Sí, garantía de 7 días con corrección gratuita.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-dark text-light py-5" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Filo Fino</h5>
+            <p>
+              Servicio de afilado <br />
+              y reparación de herramientas en Valencia.
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Contacto</h5>
+            <p>
+              📍
+              <a
+                href="https://www.google.com/maps?q=Calle+Maestro+Guerrero,+4,+Valencia,+España"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Calle Maestro Guerrero, 4 <br />
+                Valencia, España
+              </a>
+            </p>
+            <p>
+              💬
+              <a
+                href="https://wa.me/34625892626"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp: +34 625 89 26 26
+              </a>
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <h5>Síguenos</h5>
+
+            <a href="http://Instagram">Instagram ·</a>
+            <a href="http://Facebook">Facebook ·</a>
+            <a href="http://Telegram">Telegram</a>
+          </div>
+        </div>
+        <p class="text-center mt-3">
+          &copy; 2025 Filo Fino · Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal: Carrito -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold">🛒 Tu carrito</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="cart-items">
+            <p>Tu carrito está vacío.</p>
+          </div>
+
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Seguir comprando
+            </button>
+            <button type="button" class="btn btn-success" id="checkoutBtn">
+              Finalizar pedido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+    
+
+
+    <!-- Scripts -->
+    <script src="blog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
