@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog de afilado profesional en Valencia | Filo Fino</title>
+
+    <meta
+      name="description"
+      content="Consejos reales de taller sobre afilado profesional en Valencia: tijeras de peluquería, alicates y herramientas de manicura, y cuchillos de cocina. Errores comunes, mantenimiento y cuándo afilar."
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/blog/index.html" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Blog de afilado profesional en Valencia | Filo Fino"
+    />
+    <meta
+      property="og:description"
+      content="Guías prácticas y claras sobre afilado profesional: peluquería, manicura y cuchillos. Basado en experiencia real de taller en Valencia."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Bootstrap + styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles-blog.css" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER (igual que en la home, pero enlaces hacia /index.html#...) -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container-fluid px-3">
+        <!-- Логотип -->
+        <a class="navbar-brand fw-bold" href="/index.html">Filo Fino</a>
+
+        <!-- Навигация для десктопа -->
+        <div class="d-none d-lg-flex align-items-center ms-auto gap-3">
+          <ul class="navbar-nav flex-row mb-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#tarifas">Tarifas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#proceso">Cómo trabajamos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+
+          <a
+            class="navbar-phone btn-styleNav"
+            data-phone
+            aria-label="Llamar por teléfono"
+          >
+            <i class="bi bi-telephone"></i>
+          </a>
+        </div>
+
+        <!-- Бургер -->
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          id="burgerToggle"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Overlay burger (versión simple para blog) -->
+    <div id="burgerMenu" class="burger-overlay">
+      <button class="close-btn" id="closeBurger">&times;</button>
+      <ul>
+        <li><a href="../index.html#tarifas">Tarifas</a></li>
+        <li><a href="../index.html#proceso">Cómo trabajamos</a></li>
+        <li><a href="./index.html">Blog</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- MAIN -->
+    <main id="blog" class="blog-page">
+      <!-- HERO -->
+      <section class="blog-hero">
+        <div class="container">
+          <div class="blog-hero__inner">
+            <div class="blog-hero__text">
+              <p class="blog-hero__kicker">Blog del taller</p>
+              <h1 class="blog-hero__title">
+                Consejos reales de afilado en Valencia
+              </h1>
+              <p class="blog-hero__subtitle">
+                Guías claras para manicura y peluquería: cuándo afilar, qué
+                errores evitar y por qué el mantenimiento a tiempo ahorra
+                dinero.
+              </p>
+
+              <!-- Tablet toggle (solo aparece en tablet) -->
+              <button
+                class="btn blog-sidebar-toggle"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#blogSidebarCanvas"
+                aria-controls="blogSidebarCanvas"
+              >
+                Ver categorías y artículos
+              </button>
+            </div>
+
+            <div class="blog-hero__badge">
+              <div class="blog-hero__badge-card">
+                <div class="blog-hero__badge-title">Contacto rápido</div>
+                <div class="blog-hero__badge-row">
+                  <i class="bi bi-telephone"></i>
+                  <a data-phone aria-label="Llamar por teléfono"></a>
+                </div>
+                <div class="blog-hero__badge-row">
+                  <i class="bi bi-geo-alt"></i>
+                  <a data-address target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="blog-content">
+        <div class="container">
+          <div class="blog-layout">
+            <!-- MAIN -->
+            <div class="blog-main">
+              <div class="blog-section-title">
+                <h2>Artículos</h2>
+                <p>Selecciona un tema y abre el artículo.</p>
+              </div>
+
+              <div class="blog-grid">
+                <!-- Card 1 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/cuando-afilar-tijeras-manicura.html"
+                  >
+                    <div class="blog-card__meta">Manicura</div>
+                    <h3 class="blog-card__title">
+                      ¿Cuándo afilar tijeras de manicura?
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Señales claras de que el filo ya no es seguro: enganches,
+                      presión extra y cortes irregulares.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/alicato-sin-arreglo.html"
+                  >
+                    <div class="blog-card__meta">Manicura</div>
+                    <h3 class="blog-card__title">
+                      Cómo saber si un alicate no tiene arreglo
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Holguras, puntas rotas, desalineación: cuándo es
+                      reparación y cuándo es pérdida de tiempo.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/afilar-a-tiempo-evita-danos.html"
+                  >
+                    <div class="blog-card__meta">Mantenimiento</div>
+                    <h3 class="blog-card__title">
+                      Por qué afilar a tiempo evita daños
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Un filo gastado obliga a apretar más y acelera el desgaste
+                      del eje, las puntas y el cierre.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/cada-cuanto-afilar-tijeras-peluqueria.html"
+                  >
+                    <div class="blog-card__meta">Peluquería</div>
+                    <h3 class="blog-card__title">
+                      Cada cuánto afilar tijeras de peluquería
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Depende del uso y técnica. Te doy una regla práctica +
+                      señales reales de desgaste.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/errores-afilar-en-casa.html"
+                  >
+                    <div class="blog-card__meta">Errores</div>
+                    <h3 class="blog-card__title">
+                      Errores comunes al afilar en casa
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Ángulos incorrectos, piedras inadecuadas, presión: cómo se
+                      estropea una herramienta en minutos.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/profesional-vs-casero.html"
+                  >
+                    <div class="blog-card__meta">Servicio</div>
+                    <h3 class="blog-card__title">
+                      Afilado profesional vs casero
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Diferencias reales: precisión, simetría, seguridad del
+                      corte y vida útil de la herramienta.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+
+                <!-- Card 7 -->
+                <article class="blog-card">
+                  <a
+                    class="blog-card__link"
+                    href="/articulos/cuanto-cuesta-afilar-valencia.html"
+                  >
+                    <div class="blog-card__meta">Precios</div>
+                    <h3 class="blog-card__title">
+                      Cuánto cuesta afilar en Valencia
+                    </h3>
+                    <p class="blog-card__excerpt">
+                      Qué influye en el precio: tipo de herramienta, estado,
+                      ajustes y tiempo real de trabajo.
+                    </p>
+                    <div class="blog-card__cta">
+                      Leer <i class="bi bi-arrow-right"></i>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+
+            <!-- SIDEBAR (desktop) -->
+            <aside class="blog-sidebar">
+              <div class="blog-sidebar__box">
+                <div class="blog-sidebar__title">Categorías</div>
+                <div class="blog-tags">
+                  <a class="blog-tag" href="/blog.html#manicura">Manicura</a>
+                  <a class="blog-tag" href="/blog.html#peluqueria"
+                    >Peluquería</a
+                  >
+                  <a class="blog-tag" href="/blog.html#mantenimiento"
+                    >Mantenimiento</a
+                  >
+                  <a class="blog-tag" href="/blog.html#errores">Errores</a>
+                  <a class="blog-tag" href="/blog.html#precios">Precios</a>
+                </div>
+              </div>
+
+              <div class="blog-sidebar__box">
+                <div class="blog-sidebar__title">Contacto</div>
+                <div class="blog-sidebar__row">
+                  <i class="bi bi-telephone"></i>
+                  <a data-phone aria-label="Llamar por teléfono"></a>
+                </div>
+                <div class="blog-sidebar__row">
+                  <i class="bi bi-geo-alt"></i>
+                  <a data-address target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <div class="blog-sidebar__row">
+                  <i class="bi bi-chat-dots"></i>
+                  <a data-whatsapp target="_blank" rel="noopener noreferrer"
+                    >WhatsApp</a
+                  >
+                </div>
+              </div>
+
+              <div class="blog-sidebar__box">
+                <div class="blog-sidebar__title">Tip del taller</div>
+                <p class="blog-sidebar__tip">
+                  Si notas que “tiras” de la cutícula o el pelo, normalmente ya
+                  estás trabajando con presión extra. Eso acelera desgaste y
+                  desajustes: mejor afilar antes de que aparezca el daño.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFCANVAS SIDEBAR (tablet) -->
+      <div
+        class="offcanvas offcanvas-end blog-offcanvas"
+        tabindex="-1"
+        id="blogSidebarCanvas"
+        aria-labelledby="blogSidebarCanvasLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="blogSidebarCanvasLabel">Blog</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Cerrar"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="blog-sidebar__box">
+            <div class="blog-sidebar__title">Categorías</div>
+            <div class="blog-tags">
+              <a
+                class="blog-tag"
+                href="/blog.html#manicura"
+                data-bs-dismiss="offcanvas"
+                >Manicura</a
+              >
+              <a
+                class="blog-tag"
+                href="/blog.html#peluqueria"
+                data-bs-dismiss="offcanvas"
+                >Peluquería</a
+              >
+              <a
+                class="blog-tag"
+                href="/blog.html#mantenimiento"
+                data-bs-dismiss="offcanvas"
+                >Mantenimiento</a
+              >
+              <a
+                class="blog-tag"
+                href="/blog.html#errores"
+                data-bs-dismiss="offcanvas"
+                >Errores</a
+              >
+              <a
+                class="blog-tag"
+                href="/blog.html#precios"
+                data-bs-dismiss="offcanvas"
+                >Precios</a
+              >
+            </div>
+          </div>
+
+          <div class="blog-sidebar__box">
+            <div class="blog-sidebar__title">Contacto</div>
+            <div class="blog-sidebar__row">
+              <i class="bi bi-telephone"></i>
+              <a data-phone aria-label="Llamar por teléfono"></a>
+            </div>
+            <div class="blog-sidebar__row">
+              <i class="bi bi-geo-alt"></i>
+              <a data-address target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="blog-sidebar__row">
+              <i class="bi bi-chat-dots"></i>
+              <a data-whatsapp target="_blank" rel="noopener noreferrer"
+                >WhatsApp</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER (tu versión final: 2 columnas + Instagram en texto + maps.app) -->
+    <footer id="contacto" class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <!-- О мастерской -->
+          <div class="col-md-6 mb-3">
+            <h5>Filo Fino</h5>
+
+            <p>
+              Taller de <strong>afilado profesional en Valencia</strong> de
+              herramientas de peluquería, cuchillos de cocina y manicura.
+            </p>
+
+            <p>
+              Compartimos ejemplos reales de trabajos, procesos de afilado y
+              resultados antes y después en nuestro
+              <a data-instagram target="_blank" rel="noopener noreferrer">
+                Instagram </a
+              >.
+            </p>
+          </div>
+
+          <!-- Контакт и график -->
+          <div class="col-md-6 mb-3">
+            <h5>Contacto</h5>
+
+            <p>
+              📍
+              <a data-address target="_blank" rel="noopener noreferrer"></a>
+            </p>
+
+            <p>
+              💬
+              <a data-whatsapp target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+            </p>
+
+            <p class="mb-0">
+              🕒 <strong>Horario</strong><br />
+              <span data-schedule></span>
+            </p>
+          </div>
+        </div>
+
+        <p class="text-center mt-4 mb-0" data-copyright></p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/site-config.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

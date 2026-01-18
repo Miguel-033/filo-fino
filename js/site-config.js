@@ -17,6 +17,11 @@ window.SITE = {
     saturday: "Sábados: con cita previa",
     sunday: "Domingos: cerrado",
   },
+
+  copyright: {
+    brand: "Filo Fino",
+    description: "Afilado profesional en Valencia",
+  },
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,10 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Расписание */
   document.querySelectorAll("[data-schedule]").forEach((el) => {
     el.innerHTML = `
-       ${s.schedule.weekdays}<br />
-       <small>${s.schedule.lunch}</small><br />
-       ${s.schedule.saturday}<br />
-       ${s.schedule.sunday}
-     `;
+      ${s.schedule.weekdays}<br />
+      <small>${s.schedule.lunch}</small><br />
+      ${s.schedule.saturday}<br />
+      ${s.schedule.sunday}
+    `;
+  });
+
+  /* © Год */
+  const year = new Date().getFullYear();
+  document.querySelectorAll("[data-copyright]").forEach((el) => {
+    el.innerHTML = `&copy; ${year} ${s.copyright.brand} · ${s.copyright.description}`;
   });
 });
