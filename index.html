@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filo Fino · Servicio de Afilado y Reparación</title>
+    <meta
+      name="description"
+      content="
+      Afilado profesional de cuchillos, tijeras de peluquería y herramientas de manicura en Valencia, Torrent, Paterna y alrededores. Trabajo en 1 día y garantía de 7 días."
+    />
+
+    <title>
+      Afilado profesional en Valencia | Cuchillos, peluquería y manicura · Filo
+      Fino
+    </title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,64 +30,45 @@
     <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-      <div class="container">
+      <div class="container-fluid px-3">
         <!-- Логотип -->
-        <a class="navbar-brand fw-bold" href="#">Filo Fino</a>
+        <a class="navbar-brand fw-bold" href="/index.html">Filo Fino</a>
 
         <!-- Навигация для десктопа -->
-        <div class="d-none d-lg-block ">
-          <ul class="navbar-nav ms-auto flex-row">
-            <li class="nav-item">
-              <!-- <a class="nav-link" href="#services">Servicios</a> -->
-            </li>
+        <div class="d-none d-lg-flex align-items-center ms-auto gap-3">
+          <ul class="navbar-nav flex-row mb-0">
             <li class="nav-item">
               <a class="nav-link" href="#tarifas">Tarifas</a>
             </li>
+
             <li class="nav-item">
-              <!-- <a class="nav-link" href="#catalogo">Productos</a> -->
+              <a class="nav-link" href="#proceso">Cómo trabajamos</a>
             </li>
 
-            <!-- Dropdown Nosotros -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarNosotros"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                Nosotros
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <!-- <a class="dropdown-item" href="#why">¿Por qué elegirnos?</a> -->
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#about">Sobre nosotros</a>
-                </li>
-                <li><a class="dropdown-item" href="#proceso">Proceso</a></li>
-                <li>
-                  <!-- <a class="dropdown-item" href="#testimonios">Opiniones</a> -->
-                </li>
-                <!-- <li><a class="dropdown-item" href="#faq">FAQ</a></li> -->
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
           </ul>
-        <a class="" href="tel:+34625892626">625892626</a>
 
+          <a
+            class="navbar-phone btn-styleNav"
+            data-phone
+            aria-label="Llamar por teléfono"
+          >
+            <i class="bi bi-telephone"></i>
+          </a>
         </div>
 
-
-        <!-- Кнопка-бургер (только на мобилке) -->
+        <!-- Бургер -->
         <button
           class="navbar-toggler d-lg-none"
           type="button"
           id="burgerToggle"
+          aria-label="Abrir menú"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -92,10 +83,9 @@
         <li><a href="#tarifas">Tarifas</a></li>
         <!-- <li><a href="#catalogo">Productos</a></li> -->
         <!-- <li><a href="#why">¿Por qué elegirnos?</a></li> -->
-        <li><a href="#about">Sobre nosotros</a></li>
-        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#about">Cómo trabajamos</a></li>
+        <!-- <li><a href="#proceso">Proceso</a></li> -->
         <!-- <li><a href="#testimonios">Opiniones</a></li> -->
-        <li><a href="#faq">FAQ</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li class="nav-item ms-3">
@@ -113,11 +103,15 @@
     >
       <div class="container down" data-aos="fade-up">
         <h1 class="display-4 fw-bold text-white">
-          Servicio de afilado y reparación
+          Afilado profesional de herramientas en Valencia
         </h1>
         <p class="lead text-light">
-          Manicura · Peluquería · Cuchillos · Equipos
+          Tijeras de peluquería · Cuchillos · Manicura · Reparación y ajuste
         </p>
+        <p class="text-light mt-2">
+          Afilado correcto según el uso real de cada herramienta
+        </p>
+
         <!-- <button
           class="btn btn-primary btn-lg mt-3"
           data-bs-toggle="modal"
@@ -134,20 +128,32 @@
         <h2 class="mb-4">¿Por qué elegirnos?</h2>
         <div class="row g-4">
           <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
-            <h5 class="mt-3">Servicio rápido</h5>
-            <p>La mayoría de los pedidos se completan en 1-2 días.</p>
+            <h5 class="mt-3">Plazos reales</h5>
+            <p>
+              El 90% de los trabajos se realizan en un solo día laborable, sin
+              prisas y sin comprometer la calidad del afilado.
+            </p>
           </div>
           <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
-            <h5 class="mt-3">Alta calidad</h5>
-            <p>Utilizamos equipos profesionales y técnicas precisas.</p>
+            <h5 class="mt-3">Criterio profesional</h5>
+            <p>
+              No afilamos de forma automática: cada herramienta se revisa y se
+              ajusta según su función, estado y tipo de trabajo.
+            </p>
           </div>
           <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
-            <h5 class="mt-3">Garantía</h5>
-            <p>Corrección gratuita si el instrumento no funciona en 7 días.</p>
+            <h5 class="mt-3">Garantía real</h5>
+            <p>
+              Garantía de 7 días tras el afilado. Si algo no funciona como debe,
+              realizamos la corrección sin coste adicional.
+            </p>
           </div>
           <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
-            <h5 class="mt-3">Experiencia</h5>
-            <p>Más de 10 años en el sector de afilado y reparación.</p>
+            <h5 class="mt-3">Especialización</h5>
+            <p>
+              Trabajamos con herramientas de peluquería, manicura y cuchillos
+              profesionales, respetando su geometría y vida útil.
+            </p>
           </div>
         </div>
       </div>
@@ -169,22 +175,32 @@
           <!-- Правая колонка с текстом -->
           <div class="col-md-6" data-aos="fade-left">
             <h2 class="fw-bold mb-3">Sobre nosotros</h2>
+
             <p>
-              En <strong>Filo Fino</strong> nos especializamos en el afilado y la
-              reparación de herramientas de manicura, peluquería y cocina.
-              Nuestro taller en Valencia combina la experiencia artesanal con
-              tecnología moderna para ofrecer resultados precisos y duraderos.
+              En <strong>Filo Fino</strong> nos dedicamos al afilado profesional
+              y la restauración de herramientas de trabajo: tijeras de
+              peluquería, instrumentos de manicura y cuchillos de cocina.
             </p>
+
             <p>
-              Sabemos lo importante que es para un profesional trabajar con
-              herramientas en perfecto estado. Por eso garantizamos cortes
-              limpios y suaves, prolongando la vida útil de tus tijeras,
-              alicates y cuchillos.
+              Nuestro enfoque no es automático ni genérico. Cada herramienta se
+              revisa individualmente para entender su estado real, su geometría
+              y la función para la que se utiliza. Un afilado correcto no solo
+              devuelve el filo, sino que permite trabajar mejor, con menos
+              esfuerzo y mayor control.
             </p>
+
             <p>
-              Con más de 10 años de experiencia, cientos de clientes satisfechos
-              y garantía en cada servicio, somos tu aliado de confianza en el
-              cuidado de tus herramientas.
+              Con frecuencia recibimos herramientas que han sido afiladas de
+              forma incorrecta: geometría alterada, material retirado en exceso
+              o ángulos inadecuados. En estos casos, el trabajo consiste en
+              restaurar el instrumento, no simplemente volver a afilarlo.
+            </p>
+
+            <p>
+              Trabajamos en nuestro taller en Valencia, atendiendo también a
+              clientes de Torrent, Paterna, Burjassot y otras zonas cercanas,
+              así como envíos desde toda España.
             </p>
           </div>
         </div>
@@ -199,27 +215,31 @@
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
             <h1 class="display-6 fw-bold textPrimary">1</h1>
             <p>
-              Recibimos tus herramientas en el taller o mediante mensajería.
+              Recibimos las herramientas en el taller o mediante mensajería,
+              tanto de clientes locales como de otras ciudades.
             </p>
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
             <h1 class="display-6 fw-bold textPrimary">2</h1>
             <p>
-              Realizamos un <strong>diagnóstico completo</strong> para detectar
-              desgastes o problemas en el filo.
+              Revisamos cada herramienta para detectar desgastes, daños previos
+              y errores de afilado, evitando trabajar de forma automática.
             </p>
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
             <h1 class="display-6 fw-bold textPrimary">3</h1>
             <p>
-              Llevamos a cabo el <strong>afilado y la reparación</strong> con
-              maquinaria profesional.
+              Realizamos el afilado, ajuste o restauración con maquinaria
+              profesional, respetando la geometría y el uso real de cada
+              instrumento.
             </p>
           </div>
           <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
             <h1 class="display-6 fw-bold textPrimary">4</h1>
             <p>
-              Entregamos las herramientas listas con garantía de satisfacción.
+              Entregamos las herramientas listas para trabajar, con garantía de
+              7 días y la posibilidad de corrección si algo no funciona como
+              debe.
             </p>
           </div>
         </div>
@@ -229,31 +249,169 @@
     <!-- Tarifas -->
     <section id="tarifas" class="py-5 bg-light" data-aos="fade-up">
       <div class="container">
-        <h2 class="text-center mb-4">Tarifas orientativas</h2>
-        <p class="text-center mb-4">
-          Ofrecemos precios justos y transparentes para el
-          <strong>afilado de herramientas profesionales</strong>. Estas tarifas
-          sirven como referencia:
+        <h2 class="text-center mb-3">Tarifas</h2>
+
+        <p class="text-center mb-5">
+          Precios claros para el
+          <strong>afilado y reparación de herramientas profesionales</strong>.
+          Si el estado del instrumento requiere trabajo adicional, el precio se
+          confirma antes de empezar.
         </p>
-        <div class="row justify-content-center">
-          <div class="col-md-5">
-            <ul class="list-group shadow">
-              <li class="list-group-item d-flex justify-content-between">
-                Afilado de alicates <span>desde €8</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                Tijeras de manicura <span>desde €7</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                Tijeras de peluquería <span>desde €17</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                Cuchillos de cocina <span>desde €5</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                Reparación básica <span>desde €10</span>
-              </li>
-            </ul>
+
+        <div class="row g-4 justify-content-center">
+          <!-- MANICURA -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3">Manicura &amp; Pedicura</h3>
+
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Alicates de manicura <span class="fw-semibold">8 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Tijeras de manicura <span class="fw-semibold">7 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Pinzas <span class="fw-semibold">5 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Empujador / pusher <span class="fw-semibold">5 €</span>
+                  </li>
+                </ul>
+
+                <small class="text-muted d-block mt-3">
+                  *Precio por unidad. Ajuste adicional según estado.
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- PELUQUERIA -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3">Peluquería</h3>
+
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Tijeras clásicas <span class="fw-semibold">17 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Tijeras de entresacar <span class="fw-semibold">19 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Afilado Convex <span class="fw-semibold">22 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Cuchillas para máquinas
+                    <span class="fw-semibold">13 €</span>
+                  </li>
+                </ul>
+
+                <small class="text-muted d-block mt-3">
+                  *Precio según modelo y estado del filo.
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- CUCHILLOS -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3">Cuchillos</h3>
+
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Afilado estándar (cocina doméstica)
+                    <span class="fw-semibold">desde 5 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Afilado especializado (para profesionales)
+                    <span class="fw-semibold">desde 15 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Restauración de filo
+                    <span class="fw-semibold">desde 5 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Selección del ángulo de afilado
+                    <span class="fw-semibold">según uso</span>
+                  </li>
+                </ul>
+
+                <small class="text-muted d-block mt-3">
+                  *El afilado especializado está recomendado para chefs,
+                  carniceros, cuchillos de alto valor y uso profesional.
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- REPARACION -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3">Reparación y mantenimiento</h3>
+
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Servicio técnico y mantenimiento periódico
+                    <span class="fw-semibold">desde 15 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Limpieza interna de equipos profesionales
+                    <span class="fw-semibold">desde 15 €</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Reparación de equipos eléctricos
+                    <span class="fw-semibold">presupuesto</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between px-0"
+                  >
+                    Diagnóstico técnico y valoración
+                    <span class="fw-semibold">incluido</span>
+                  </li>
+                </ul>
+
+                <small class="text-muted d-block mt-3">
+                  *Servicio para máquinas de peluquería, fresadoras de manicura,
+                  secadores y otros equipos profesionales.
+                </small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -359,77 +517,45 @@
     <!-- CTA -->
     <section class="py-5 text-center bg-primary text-white" data-aos="fade-up">
       <div class="container">
-        <h2 class="mb-3">¿Necesitas afilar tus herramientas?</h2>
+        <h2 class="mb-3">¿Tu herramienta no funciona como debería?</h2>
         <p class="mb-4">
-          Envíanos un mensaje y recupera la precisión de tus tijeras y alicates.
+          Escríbenos por WhatsApp, revisamos tu caso y te indicamos la mejor
+          solución antes de empezar el trabajo.
         </p>
         <a
-          href="https://wa.me/34600111222"
+          data-whatsapp
           target="_blank"
-          class="btn btn-light btn-lg"
-          >📩 Contactar por WhatsApp</a
+          class="btn btn-light btn-lg navbar-phone btn-style"
         >
+          📩 Consultar por WhatsApp
+        </a>
       </div>
     </section>
 
     <!-- Blog -->
-    <section id="blog" class="py-5" data-aos="fade-up">
+    <!-- Consejos profesionales -->
+    <section id="blog" class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-4">Últimos artículos</h2>
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1607083208173-3d2f1a0c9340?auto=format&fit=crop&w=400&q=80"
-                class="card-img-top"
-                alt="Afilar tijeras"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">¿Cuándo afilar tus tijeras?</h5>
-                <p class="card-text flex-grow-1">
-                  Señales de que tus tijeras necesitan afilado.
-                </p>
-                <a href="#" class="btn btn-outline-primary leer-mas" data-id="1">Leer más</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1612277799987-92d69d9d0f6b?auto=format&fit=crop&w=400&q=80"
-                class="card-img-top"
-                alt="Cuidado de herramientas"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Cómo cuidar tus herramientas</h5>
-                <p class="card-text flex-grow-1">
-                  Consejos de limpieza y lubricación para prolongar la vida
-                  útil.
-                </p>
-                <a href="#" class="btn btn-outline-primary leer-mas" data-id="2">Leer más</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1621273420101-5a65bfbef3d3?auto=format&fit=crop&w=400&q=80"
-                class="card-img-top"
-                alt="Errores de afilado casero"
-              />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Errores comunes en casa</h5>
-                <p class="card-text flex-grow-1">
-                  Por qué no debes afilar tijeras y cuchillos en casa.
-                </p>
-                <a href="#" class="btn btn-outline-primary leer-mas" data-id="3">Leer más</a>
-              </div>
-            </div>
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2 class="mb-3">Consejos profesionales</h2>
+            <p>
+              Respuestas claras a las preguntas más comunes sobre el afilado de
+              tijeras, alicates y cuchillos. Contenido pensado para
+              profesionales de manicura, peluquería y cocina.
+            </p>
+
+            <ul class="list-unstyled mt-3">
+              <li>✔ ¿Cuándo afilar tijeras de manicura?</li>
+              <li>✔ Errores comunes al afilar en casa</li>
+              <li>✔ Cada cuánto afilar tijeras profesionales</li>
+            </ul>
+
+            <a href="./blog/index.html" class="btn-style navbar-phone">
+              Ver todos los consejos
+            </a>
           </div>
         </div>
-      </div>
-</div>
-
       </div>
     </section>
 
@@ -475,51 +601,52 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="bg-dark text-light py-5" data-aos="fade-up">
+    <footer id="contacto" class="bg-dark text-light py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 mb-3">
+          <!-- О мастерской -->
+          <div class="col-md-6 mb-3">
             <h5>Filo Fino</h5>
+
             <p>
-              Servicio de afilado <br />
-              y reparación de herramientas en Valencia.
+              Taller de <strong>afilado profesional en Valencia</strong> de
+              herramientas de peluquería, cuchillos de cocina y manicura.
+            </p>
+
+            <p>
+              Compartimos ejemplos reales de trabajos, procesos de afilado y
+              resultados antes y después en nuestro
+              <a data-instagram target="_blank" rel="noopener noreferrer">
+                Instagram </a
+              >.
             </p>
           </div>
-          <div class="col-md-4 mb-3">
+
+          <!-- Контакт и график -->
+          <div class="col-md-6 mb-3">
             <h5>Contacto</h5>
+
             <p>
               📍
-              <a
-                href="https://www.google.com/maps?q=Calle+Maestro+Guerrero,+4,+Valencia,+España"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Calle Maestro Guerrero, 4 <br />
-                Valencia, España
-              </a>
+              <a data-address target="_blank" rel="noopener noreferrer"></a>
             </p>
+
             <p>
               💬
-              <a
-                href="https://wa.me/34625892626"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp: +34 625 89 26 26
+              <a data-whatsapp target="_blank" rel="noopener noreferrer">
+                WhatsApp
               </a>
             </p>
-          </div>
 
-          <div class="col-md-4 mb-3">
-            <h5>Síguenos</h5>
-
-            <a href="http://Instagram">Instagram ·</a>
-            <a href="http://Facebook">Facebook ·</a>
-            <a href="http://Telegram">Telegram</a>
+            <p class="mb-0">
+              🕒 <strong>Horario</strong><br />
+              <span data-schedule></span>
+            </p>
           </div>
         </div>
-        <p class="text-center mt-3">
-          &copy; 2025 Filo Fino · Todos los derechos reservados
+
+        <p class="text-center mt-4 mb-0">
+          &copy; 2025 Filo Fino · Afilado profesional en Valencia
         </p>
       </div>
     </footer>
@@ -564,13 +691,9 @@
       </div>
     </div>
 
-  
-
-    
-
-
     <!-- Scripts -->
-    <script src="blog.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/site-config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
