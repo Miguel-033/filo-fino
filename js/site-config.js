@@ -1,7 +1,11 @@
 window.SITE = {
   phone: {
-    display: "+34 625 89 26 26",
-    raw: "34625892626",
+    display: "+34 614 00 50 53",
+    raw: "34614005053",
+  },
+
+  whatsapp: {
+    defaultText: "Hola, tengo una consulta sobre el afilado de herramientas.",
   },
 
   instagram: "https://www.instagram.com/filofino.es",

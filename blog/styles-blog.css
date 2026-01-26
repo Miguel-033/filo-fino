@@ -129,6 +129,7 @@
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .blog-card:hover {
@@ -230,7 +231,8 @@
 }
 
 .blog-tag {
-  background: rgba(255, 102, 0, 0.12);
+  border: 1px solid rgba(255, 102, 0, 0.25);
+  background: rgba(255, 102, 0, 0.08);
   color: var(--primary);
   padding: 6px 14px;
   border-radius: 50px;
@@ -241,6 +243,12 @@
 
 .blog-tag:hover {
   background: rgba(255, 102, 0, 0.22);
+}
+
+.blog-tag.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
 }
 
 /* ================================
@@ -308,4 +316,35 @@
   .blog-hero__subtitle {
     font-size: 1rem;
   }
+}
+
+.blog-sidebar {
+  position: sticky;
+  top: 100px;
+}
+.blog-filter-status {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.blog-sidebar__hint {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+.blog-sidebar__cta {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.blog-card {
+  cursor: pointer;
+}
+.blog-card__link:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+.blog-hero__trust {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-top: 10px;
 }

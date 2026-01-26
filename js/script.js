@@ -1,6 +1,14 @@
-// script.js — CLEAN VERSION
-
 document.addEventListener("DOMContentLoaded", () => {
+  /* ===============================
+     ACTIVE ARTICLE CATEGORY
+  =============================== */
+  const bodyCategory = document.body.dataset.articleCategory;
+  if (bodyCategory) {
+    document.querySelectorAll(".blog-tag").forEach((tag) => {
+      tag.classList.toggle("active", tag.dataset.category === bodyCategory);
+    });
+  }
+
   /* ===============================
      BURGER MENU
   =============================== */
@@ -32,21 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===============================
-     NAVBAR SCROLL EFFECT
+     NAVBAR SCROLL
   =============================== */
   const navbar = document.querySelector(".navbar");
-
   if (navbar) {
-    const handleNavbarScroll = () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+    const onScroll = () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
     };
-
-    handleNavbarScroll(); // initial state
-    window.addEventListener("scroll", handleNavbarScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
   }
 
   /* ===============================
@@ -64,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : null;
 
   let cart = loadCart();
+  updateCartCount();
 
   function loadCart() {
     try {
@@ -80,44 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateCartCount() {
-    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-    if (cartCount) {
-      cartCount.textContent = totalQty;
-      cartCount.style.display = totalQty > 0 ? "inline-block" : "none";
-    }
-  }
-
-  function addToCart(product) {
-    const existing = cart.find((i) => i.id === product.id);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ ...product, qty: 1 });
-    }
-    saveCart();
-  }
-
-  function removeFromCart(id) {
-    cart = cart.filter((item) => item.id !== id);
-    saveCart();
-    renderCart();
-  }
-
-  function changeQty(id, delta) {
-    const item = cart.find((i) => i.id === id);
-    if (!item) return;
-
-    item.qty += delta;
-    if (item.qty <= 0) {
-      removeFromCart(id);
-    } else {
-      saveCart();
-      renderCart();
-    }
-  }
-
-  function formatPrice(num) {
-    return num.toFixed(2).replace(".", ",") + " €";
+    if (!cartCount) return;
+    const total = cart.reduce((s, i) => s + i.qty, 0);
+    cartCount.textContent = total;
+    cartCount.style.display = total ? "inline-block" : "none";
   }
 
   function renderCart() {
@@ -148,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         })
         .join("") +
-      `<div class="text-end mt-3"><strong>Total: ${formatPrice(
-        total
-      )}</strong></div>`;
+      `<div class="text-end mt-3"><strong>Total: ${total.toFixed(
+        2
+      )} €</strong></div>`;
   }
 
   if (cartButton && cartModal) {
@@ -164,12 +133,18 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItemsContainer.addEventListener("click", (e) => {
       const id =
         e.target.dataset.inc || e.target.dataset.dec || e.target.dataset.remove;
-
       if (!id) return;
 
-      if (e.target.dataset.inc) changeQty(id, 1);
-      if (e.target.dataset.dec) changeQty(id, -1);
-      if (e.target.dataset.remove) removeFromCart(id);
+      const item = cart.find((i) => i.id === id);
+      if (!item) return;
+
+      if (e.target.dataset.inc) item.qty++;
+      if (e.target.dataset.dec) item.qty--;
+      if (item.qty <= 0 || e.target.dataset.remove)
+        cart = cart.filter((i) => i.id !== id);
+
+      saveCart();
+      renderCart();
     });
   }
 
@@ -181,27 +156,25 @@ document.addEventListener("DOMContentLoaded", () => {
       id: btn.dataset.id,
       name: btn.dataset.name,
       price: Number(btn.dataset.price),
-      image: btn.dataset.image || "",
     };
 
     if (!product.id || !product.name || isNaN(product.price)) return;
-    addToCart(product);
+
+    const existing = cart.find((i) => i.id === product.id);
+    existing ? existing.qty++ : cart.push({ ...product, qty: 1 });
+    saveCart();
   });
 
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
       if (!cart.length) return alert("Tu carrito está vacío");
 
-      const text = cart
-        .map((i) => `${i.name} x${i.qty} = ${i.price * i.qty}€`)
-        .join("%0A");
+      const text = cart.map((i) => `${i.name} x${i.qty}`).join("%0A");
 
       window.open(
-        `https://wa.me/34600111222?text=Pedido Filofino:%0A${text}`,
+        `https://wa.me/34614005053?text=Pedido Filofino:%0A${text}`,
         "_blank"
       );
     });
   }
-
-  updateCartCount();
 });
