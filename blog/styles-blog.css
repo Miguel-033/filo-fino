@@ -316,11 +316,37 @@
   .blog-hero__subtitle {
     font-size: 1rem;
   }
+
+  .blog-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 🔴 ВАЖНО: делаем sidebar flex */
+  .blog-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 1️⃣ СТАТЬИ — СНАЧАЛА */
+  .blog-main {
+    order: 1;
+  }
+
+  /* 2️⃣ CONTACT + TIP */
+  .blog-sidebar__box:not(:first-child) {
+    order: 2;
+  }
+
+  /* 3️⃣ ФИЛЬТР — В САМОМ НИЗУ */
+  .blog-sidebar__box:first-child {
+    order: 3;
+    margin-top: 24px;
+  }
 }
 
 .blog-sidebar {
-  position: sticky;
-  top: 100px;
+  position: static;
 }
 .blog-filter-status {
   font-size: 0.9rem;
@@ -347,4 +373,11 @@
   font-size: 0.95rem;
   color: #ddd;
   margin-top: 10px;
+}
+
+/* DESKTOP + LARGE TABLET */
+@media (min-width: 992px) {
+  .blog-sidebar {
+    margin-top: 97px;
+  }
 }
