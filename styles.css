@@ -203,8 +203,9 @@ section {
 }
 
 /* ================================
-    HERO
- ================================ */
+   HERO (Главная страница)
+================================ */
+
 .hero {
   margin: 0;
   padding: 0;
@@ -214,21 +215,45 @@ section {
   justify-content: center;
   text-align: center;
   color: #fff;
-  background: url("images/hero.jpg") no-repeat center center/cover;
+
+  background: url("images/hero.jpg") no-repeat center center / cover;
   position: relative;
+  overflow: hidden;
 }
 
+/* Затемнение фона для читаемости текста */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Контейнер с текстом поверх затемнения */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовок */
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
+/* Подзаголовок / описание */
 .hero p {
-  font-size: 1.2rem;
-  color: #ddd;
+  font-size: 1.3rem;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto 30px;
 }
 
+/* Кнопка */
 .hero .btn-primary {
   background: var(--primary);
   border: none;
@@ -236,15 +261,22 @@ section {
   padding: 12px 28px;
   font-size: 1.1rem;
   border-radius: 50px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .hero .btn-primary:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
 }
+
+/* Отступ вниз (если используешь якорь) */
 .down {
   margin-bottom: 70px;
 }
+
+/* ================================
+   HERO ABOUT (О нас)
+================================ */
 
 .hero-about {
   margin: 0;
@@ -255,22 +287,26 @@ section {
   justify-content: center;
   text-align: center;
   color: #fff;
+
   background-image: url("images/s226428980703485357_p2_i1_w640.jpeg");
-  background-size: cover; /* масштабирует фото по ширине блока */
-  background-position: center; /* центрирует изображение */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+
   position: relative;
+  overflow: hidden;
 }
 
-/* затемнение для читаемости текста */
+/* Затемнение для читаемости текста */
 .hero-about::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
-/* текст поверх затемнения */
+/* Текст поверх затемнения */
 .hero-about .container {
   position: relative;
   z-index: 2;
