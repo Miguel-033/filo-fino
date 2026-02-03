@@ -633,6 +633,10 @@ footer a:hover {
   footer {
     text-align: center;
   }
+  .footer-legal a {
+    display: block;
+    margin-bottom: 6px;
+  }
 }
 
 /* === DEBUG: find horizontal overflow === */
@@ -645,4 +649,81 @@ footer a:hover {
 ================================ */
 .burger-overlay.open {
   display: flex;
+}
+.footer-legal {
+  margin-top: 1rem;
+}
+
+.footer-legal a {
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-legal a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.horario {
+  color: var(--bg);
+}
+
+/* ================================
+   LEGAL PAGES
+================================ */
+
+.legal-page {
+  padding: 60px 0;
+  background: #f7f7f7;
+}
+
+.legal-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.legal-card h1 {
+  margin-bottom: 24px;
+}
+
+.legal-card h2 {
+  margin-top: 32px;
+  font-size: 1.2rem;
+}
+
+.legal-card p,
+.legal-card li {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.legal-card ul {
+  padding-left: 20px;
+}
+
+.legal-actions {
+  margin-top: 40px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
 }

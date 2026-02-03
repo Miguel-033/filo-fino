@@ -64,6 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
+  /* Legal pages */
+  const LEGAL_PAGES = {
+    aviso: "/aviso-legal.html",
+    privacy: "/politica-privacidad.html",
+    cookies: "/politica-cookies.html",
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-legal]").forEach((el) => {
+      const key = el.dataset.legal;
+      if (LEGAL_PAGES[key]) {
+        el.href = LEGAL_PAGES[key];
+      }
+    });
+  });
+
   /* © Год */
   const year = new Date().getFullYear();
   document.querySelectorAll("[data-copyright]").forEach((el) => {
