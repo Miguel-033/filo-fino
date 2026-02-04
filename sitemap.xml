@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Главная -->
+  <url>
+    <loc>https://filofino.es/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Блог -->
+  <url>
+    <loc>https://filofino.es/blog/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Раздел статей -->
+  <url>
+    <loc>https://filofino.es/articulos/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Статьи -->
+  <url>
+    <loc>https://filofino.es/articulos/afilado-empeora.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/alicate-ruega.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/aparato-vibra.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/barato-sale-caro.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/bloque-no-soluciona.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/cuchillo-aplasta.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/cuchillo-no-corta.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/manicura-no-compensa.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/maquina-muerde.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/reparar-o-cambiar.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/tijeras-despues-afilado.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/tijeras-no-uniformes.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/tijeras-tiran.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
