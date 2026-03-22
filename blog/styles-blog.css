@@ -390,6 +390,26 @@
 .link-text a:hover {
   text-decoration: underline;
 }
+
+.link-text-cta {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.link-text-cta {
+  color: var(--primary);
+  text-decoration: none !important;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.link-text-cta:hover {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  text-decoration: none !important;
+}
 .article-media-block {
   display: grid;
   grid-template-columns: minmax(260px, 380px) 1fr;
@@ -715,4 +735,89 @@
   .imgBlogWrap::after {
     border-radius: 14px;
   }
+}
+/* Highlight */
+.blog-highlight {
+  background: linear-gradient(135deg, #fff3cd, #ffe8a1);
+  border-left: 4px solid #ff9800;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 25px 0;
+  font-weight: 500;
+}
+
+/* Warning */
+.blog-warning {
+  background: #fff4f4;
+  border-left: 4px solid #ff4d4f;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 25px 0;
+}
+
+/* Media block */
+.article-media-block {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin: 40px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .article-media-block {
+    flex-direction: column;
+  }
+}
+
+/* Image */
+.imgBlogWrap {
+  flex: 0 0 300px;
+}
+
+.imgBlog {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.imgBlog:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Content */
+.article-media-content {
+  flex: 1;
+}
+
+/* List */
+.blog-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.blog-list li {
+  margin-bottom: 10px;
+}
+.videoBlogWrap {
+  flex: 0 0 300px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  background: #000;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.videoBlogWrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.24);
+}
+
+.videoBlog {
+  display: block;
+  width: 100%;
+  height: auto;
 }
