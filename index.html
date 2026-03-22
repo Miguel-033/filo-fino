@@ -8,10 +8,24 @@
       content="Afilado profesional de cuchillos, tijeras de peluquería y herramientas de manicura en Valencia, Torrent y alrededores. Trabajo en 1 día, garantía de 7 días y atención directa. Consulta sin compromiso."
     />
 
+    <meta
+      property="og:title"
+      content="Afilado profesional en Valencia | Filo Fino"
+    />
+    <meta
+      property="og:description"
+      content="Afilado profesional de cuchillos, tijeras y herramientas en Valencia. Servicio rápido con garantía."
+    />
+    <meta property="og:image" content="https://filofino.es/images/taller.jpg" />
+    <meta property="og:url" content="https://filofino.es/" />
+    <meta property="og:type" content="website" />
+
     <title>
       Afilado profesional en Valencia | Cuchillos, tijeras de peluquería y
       manicura · Filo Fino
     </title>
+
+    <link rel="canonical" href="https://filofino.es/" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -24,6 +38,29 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Filo Fino",
+        "image": "https://filofino.es/images/taller.jpg",
+        "url": "https://filofino.es/",
+        "telephone": "+34XXXXXXXXX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Valencia",
+          "addressCountry": "ES"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Valencia y alrededores"
+        },
+        "description": "Afilado profesional de cuchillos, tijeras de peluquería y herramientas de manicura en Valencia.",
+        "priceRange": "€",
+        "openingHours": "Mo-Sa",
+        "sameAs": ["https://www.instagram.com/TU_INSTAGRAM"]
+      }
+    </script>
   </head>
   <body>
     <!-- Navbar -->
@@ -31,7 +68,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
       <div class="container-fluid px-3">
         <!-- Логотип -->
-        <a class="navbar-brand fw-bold" href="./index.html">Filo Fino</a>
+        <a class="navbar-brand fw-bold" href="/">Filo Fino</a>
 
         <!-- Навигация для десктопа -->
         <div class="d-none d-lg-flex align-items-center ms-auto gap-3">
@@ -45,7 +82,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./blog/blog.html">Blog</a>
+              <a class="nav-link" href="/blog/">Blog</a>
             </li>
 
             <li class="nav-item">
@@ -82,10 +119,10 @@
         <li><a href="#tarifas">Tarifas</a></li>
         <!-- <li><a href="#catalogo">Productos</a></li> -->
         <!-- <li><a href="#why">¿Por qué elegirnos?</a></li> -->
-        <li><a href="./index.html#about">Cómo trabajamos</a></li>
+        <li><a href="/#proceso">Cómo trabajamos</a></li>
         <!-- <li><a href="#proceso">Proceso</a></li> -->
         <!-- <li><a href="#testimonios">Opiniones</a></li> -->
-        <li><a href="./blog/blog.html">Blog</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <!-- <li class="nav-item ms-3">
           <button id="cartButton" class="btn-cart position-relative">
@@ -211,6 +248,21 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="container py-5">
+      <h2>Afilado en Valencia para profesionales y particulares</h2>
+
+      <p>
+        Ofrecemos servicio de afilado en Valencia para cuchillos de cocina,
+        tijeras de peluquería y herramientas de manicura. Trabajamos con
+        clientes en Valencia capital, Torrent, Paterna y alrededores.
+      </p>
+
+      <p>
+        Si tu herramienta no corta, tira o ha sido mal afilada anteriormente,
+        podemos restaurarla respetando su geometría original.
+      </p>
     </section>
 
     <!-- Proceso -->
@@ -557,7 +609,7 @@
               <li>✔ Cada cuánto afilar tijeras profesionales</li>
             </ul>
 
-            <a href="./blog/blog.html" class="btn-style navbar-phone">
+            <a href="/blog/" class="btn-style navbar-phone">
               Ver todos los consejos
             </a>
           </div>
@@ -628,11 +680,11 @@
             </p>
 
             <div class="footer-legal">
-              <a href="./legal/aviso-legal.html">Aviso legal</a>
-              <a href="./legal/politica-privacidad.html"
+              <a href="/legal/aviso-legal.html">Aviso legal</a>
+              <a href="/legal/politica-privacidad.html"
                 >Política de privacidad</a
               >
-              <a href="./legal/politica-cookies.html">Política de cookies</a>
+              <a href="/legal/politica-cookies.html">Política de cookies</a>
             </div>
           </div>
 
