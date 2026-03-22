@@ -502,24 +502,26 @@
 @media (max-width: 900px) {
   .article-media-block {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 20px;
   }
 
-  .imgBlogWrap {
+  .videoBlogWrap {
     max-width: 100%;
-    aspect-ratio: 4 / 3;
+    width: 100%;
+    aspect-ratio: 9 / 14;
   }
 }
 
 @media (max-width: 576px) {
-  .imgBlogWrap {
-    border-radius: 14px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  .videoBlogWrap {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 9 / 15;
+    border-radius: 16px;
   }
 
-  .imgBlog,
-  .imgBlogWrap::after {
-    border-radius: 14px;
+  .videoBlog {
+    border-radius: 16px;
   }
 }
 
@@ -803,9 +805,11 @@
   margin-bottom: 10px;
 }
 .videoBlogWrap {
-  flex: 0 0 300px;
-  border-radius: 18px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
+  border-radius: 18px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   background: #000;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -817,7 +821,9 @@
 }
 
 .videoBlog {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #000;
 }
