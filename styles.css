@@ -2,18 +2,18 @@
    VARIABLES
 ================================ */
 :root {
-  --primary: #ff6600; /* оранжевый акцент */
+  --primary: #ff6600;
   --primary-dark: #cc5200;
   --bg: #ffffff;
   --bg-alt: #f9f9f9;
-  --text: #333333; /* тёмно-серый текст */
+  --text: #333333;
   --text-light: #555555;
   --card-bg: #ffffff;
 }
 
 /* ================================
-    GLOBAL
- ================================ */
+   GLOBAL
+================================ */
 html,
 body {
   width: 100%;
@@ -49,14 +49,12 @@ section {
 }
 
 /* ================================
-    NAVBAR
- ================================ */
+   NAVBAR
+================================ */
 .navbar {
   background: rgba(20, 20, 20, 0.65) !important;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-link {
@@ -64,7 +62,6 @@ section {
   font-weight: 500;
   margin: 0 10px;
   position: relative;
-  transition: color 0.3s ease;
 }
 
 .nav-link::after {
@@ -82,107 +79,10 @@ section {
   width: 100%;
 }
 
-/* Кнопка корзины светлая / тёмная */
-.btn-cart i {
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
-  color: #ffffff;
-}
-
-/* Счётчик корзины остаётся оранжевым */
-.cart-count {
-  background: #ff6a00;
-  color: white;
-}
-
-/* Подключи Bootstrap Icons */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
-
-.btn-cart {
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.btn-cart.active {
-  color: #ff6b00; /* оранжевый, если корзина не пуста */
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  background-color: #ff6b00;
-  color: white;
-  border-radius: 50%;
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  display: none; /* скрыта, если пусто */
-}
-
-/* Carito */
-/* Иконка корзины */
-.btn-cart {
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.btn-cart.active {
-  color: #ff6b00; /* корзина активна (оранжевая) */
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  background-color: #ff6b00;
-  color: white;
-  border-radius: 50%;
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  display: none; /* скрыта, если корзина пуста */
-}
-
-/* Стили модалки-корзины */
-.modal-fullscreen .modal-content {
-  background-color: #f8f9fa;
-  border: none;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #dee2e6;
-  padding: 10px 0;
-}
-
-.cart-item img {
-  width: 60px;
-  border-radius: 8px;
-}
-
-.cart-item button {
-  border: none;
-  background: transparent;
-  color: #333;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.cart-item button:hover {
-  color: #ff6b00;
-}
-
+/* ================================
+   BUTTONS
+================================ */
 .btn-styleNav {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
   background: var(--primary);
   color: #fff;
   border: none;
@@ -190,7 +90,7 @@ section {
   border-radius: 50px;
   text-decoration: none;
   display: inline-block;
-  transform: translateY(0);
+  transition: transform 0.15s ease, background 0.2s ease;
 }
 
 .btn-styleNav:hover {
@@ -202,139 +102,82 @@ section {
   transform: translateY(1px);
 }
 
-/* ================================
-   HERO (Главная страница)
-================================ */
+.btn-style {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
 
+.btn-style:hover {
+  transform: translateY(-2px);
+  background: var(--primary-dark);
+}
+
+/* ================================
+   HERO
+================================ */
 .hero {
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
-
-  background: url("images/hero.jpg") no-repeat center center / cover;
+  background: url("images/hero.jpg") center / cover no-repeat;
   position: relative;
-  overflow: hidden;
 }
 
-/* Затемнение фона для читаемости текста */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
 }
 
-/* Контейнер с текстом поверх затемнения */
 .hero .container {
   position: relative;
   z-index: 2;
 }
 
-/* Заголовок */
 .hero h1 {
   font-size: 3rem;
-  font-weight: 700;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 20px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* Подзаголовок / описание */
 .hero p {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: #fff;
   max-width: 900px;
   margin: 0 auto 30px;
 }
 
-/* Кнопка */
-.hero .btn-primary {
-  background: var(--primary);
-  border: none;
-  color: #fff;
-  padding: 12px 28px;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.hero .btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-/* Отступ вниз (если используешь якорь) */
-.down {
-  margin-bottom: 70px;
-}
-
 /* ================================
-   HERO ABOUT (О нас)
-================================ */
-
-.hero-about {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-
-  background-image: url("images/s226428980703485357_p2_i1_w640.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  position: relative;
-  overflow: hidden;
-}
-
-/* Затемнение для читаемости текста */
-.hero-about::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-/* Текст поверх затемнения */
-.hero-about .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* ================================
-   FULLSCREEN BURGER MENU
+   BURGER MENU
 ================================ */
 .burger-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.95);
   z-index: 9999;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  transition: opacity 0.3s ease;
+}
+
+.burger-overlay.open {
+  display: flex;
 }
 
 .burger-overlay ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .burger-overlay li {
@@ -344,16 +187,13 @@ section {
 .burger-overlay a {
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .burger-overlay a:hover {
   color: var(--primary);
 }
 
-/* Close button */
 .close-btn {
   position: absolute;
   top: 20px;
@@ -365,20 +205,15 @@ section {
   cursor: pointer;
 }
 
-.close-btn:hover {
-  color: var(--primary);
-}
-
 /* ================================
-    CARDS
- ================================ */
+   CARDS
+================================ */
 .card {
   background: var(--card-bg);
-  border: none;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -387,59 +222,13 @@ section {
 }
 
 .card img {
-  object-fit: cover;
   height: 200px;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  object-fit: cover;
 }
 
-.card:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.card-body {
-  text-align: center;
-}
-
-.card .btn {
-  background: var(--primary);
-  border: none;
-  color: #fff;
-  margin-top: 10px;
-  border-radius: 8px;
-  padding: 8px 18px;
-  transition: background 0.3s ease;
-}
-
-.card .btn:hover {
-  background: var(--primary-dark);
-}
-
-.btnPrimary {
-  display: flex;
-  justify-content: center;
-  background-color: var(--primary);
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  width: 11rem;
-  transition: all 0.3s ease;
-  margin-left: auto;
-  margin-right: 100px;
-}
-
-.btnPrimary.btn:hover {
-  color: #fff;
-  background-color: var(--primary-dark);
-  transform: translateY(-2px);
-}
 /* ================================
-    CTA
- ================================ */
+   CTA
+================================ */
 .bg-primary {
   background: #000 !important;
   padding: 60px 20px;
@@ -451,76 +240,13 @@ section {
   color: #fff !important;
 }
 
-.bg-primary .btn {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 50px;
-}
-
-.bg-primary .btn:hover {
-  background: var(--primary-dark);
-}
-
-.textPrimary {
-  color: var(--primary);
-}
-
 /* ================================
-    Faq Accordion
- ================================ */
-.accordion-button {
-  background: #fff;
-  color: var(--text);
-  font-weight: 500;
-  box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-  background: rgba(255, 102, 0, 0.15); /* лёгкий оранжевый фон */
-  color: var(--primary); /* оранжевый текст */
-  box-shadow: none;
-}
-
-.accordion-button:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 0.25rem rgba(255, 102, 0, 0.25);
-}
-
-.accordion-body {
-  color: var(--text-light);
-}
-
-.btn-style {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  display: inline-block;
-  transform: translateY(0);
-}
-
-.btn-style:hover {
-  transform: translateY(-2px);
-  background: var(--primary-dark);
-}
-
-.btn-style:active {
-  transform: translateY(1px);
-}
-
-/* ================================
-    FOOTER
- ================================ */
+   FOOTER
+================================ */
 footer {
   background: #111;
   color: #ccc;
   padding: 40px 0;
-  font-size: 0.95rem;
 }
 
 footer h5 {
@@ -536,145 +262,27 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ================================
-    UTILITIES
- ================================ */
-.btn {
-  border-radius: 50px;
-  font-weight: 600;
-}
-
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
-
-/* --- Планшеты (до 992px) --- */
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 60px 0;
-  }
-
-  .card img {
-    height: 180px;
-  }
-}
-
-/* --- Мобильные (до 768px) --- */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 80vh;
-    padding: 40px 20px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .hero .btn-primary {
-    padding: 10px 22px;
-    font-size: 1rem;
-  }
-
-  .card {
-    margin-bottom: 20px;
-  }
-
-  .card img {
-    height: 160px;
-  }
-
-  .navbar-nav {
-    background: #000;
-    padding: 20px;
-    border-radius: 8px;
-  }
-
-  .nav-link {
-    color: #fff !important;
-    margin: 10px 0;
-  }
-
-  .nav-link::after {
-    background: var(--primary);
-  }
-}
-
-/* --- Маленькие телефоны (до 480px) --- */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.85rem;
-  }
-
-  .hero .btn-primary {
-    font-size: 0.9rem;
-    padding: 8px 18px;
-  }
-
-  .card img {
-    height: 140px;
-  }
-
-  footer {
-    text-align: center;
-  }
-  .footer-legal a {
-    display: block;
-    margin-bottom: 6px;
-  }
-}
-
-/* === DEBUG: find horizontal overflow === */
-/* * {
-  outline: 1px solid rgba(255, 0, 0, 0.25);
-} */
-
-/* ================================
-   BURGER OPEN STATE (FIX)
-================================ */
-.burger-overlay.open {
-  display: flex;
-}
 .footer-legal {
   margin-top: 1rem;
 }
 
 .footer-legal a {
-  display: inline-block;
   margin-right: 14px;
   font-size: 0.9rem;
   color: var(--text-light);
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .footer-legal a:hover {
   color: var(--primary);
-  text-decoration: underline;
 }
+
 .horario {
   color: var(--bg);
 }
 
 /* ================================
-   LEGAL PAGES
+   LEGAL
 ================================ */
-
 .legal-page {
   padding: 60px 0;
   background: #f7f7f7;
@@ -686,44 +294,73 @@ footer a:hover {
   background: #fff;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-.legal-card h1 {
-  margin-bottom: 24px;
+/* ================================
+   FLOATING CONTACT
+================================ */
+.floating-contact {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.legal-card h2 {
-  margin-top: 32px;
-  font-size: 1.2rem;
-}
-
-.legal-card p,
-.legal-card li {
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.legal-card ul {
-  padding-left: 20px;
-}
-
-.legal-actions {
-  margin-top: 40px;
-}
-
-.btn-secondary {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: transparent;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
+.floating-contact__toggle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #ff6a00;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.floating-contact__panel {
+  display: none;
+}
+
+.floating-contact.is-open .floating-contact__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.floating-contact__action {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 991.98px) {
+  .floating-contact {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
 }

@@ -4,7 +4,7 @@
   <!-- Главная -->
   <url>
     <loc>https://filofino.es/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,101 +12,116 @@
   <!-- Блог -->
   <url>
     <loc>https://filofino.es/blog/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Основные страницы -->
+  <url>
+    <loc>https://filofino.es/articulos/afilado-cuchillos-valencia.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/afilar-cuchillos-cerca-de-mi.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/donde-afilar-cuchillos-valencia.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/afilado-tijeras-peluqueria-valencia.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://filofino.es/articulos/afilar-tijeras-peluqueria-cerca-de-mi.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Статьи -->
   <url>
     <loc>https://filofino.es/articulos/afilado-empeora.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/alicate-ruega.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://filofino.es/articulos/aparato-vibra.html</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/barato-sale-caro.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://filofino.es/articulos/bloque-no-soluciona.html</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/cuchillo-aplasta.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/cuchillo-no-corta.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://filofino.es/articulos/manicura-no-compensa.html</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/maquina-muerde.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/reparar-o-cambiar.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/tijeras-despues-afilado.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/tijeras-no-uniformes.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filofino.es/articulos/tijeras-tiran.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
