@@ -156,6 +156,9 @@ section {
   max-width: 900px;
   margin: 0 auto 30px;
 }
+.textPrimary {
+  color: var(--primary);
+}
 
 /* ================================
    BURGER MENU
@@ -363,4 +366,46 @@ footer a:hover {
   .hero h1 {
     font-size: 1.5rem;
   }
+}
+
+/* FAQ - стиль под бренд */
+.accordion-button {
+  background-color: #fff;
+  color: #222;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+/* Активное состояние (открытый вопрос) */
+.accordion-button:not(.collapsed) {
+  background-color: rgba(255, 122, 0, 0.2);
+  color: #ff7a00;
+  border: 1px solid rgba(255, 122, 0, 0.5);
+}
+
+/* Убираем стандартный синий фокус */
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.accordion-button::after {
+  filter: brightness(0);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(255, 122, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+/* Тело ответа */
+.accordion-body {
+  background-color: #fff;
+  border-radius: 0 0 12px 12px;
+}
+.accordion-item {
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
 }
