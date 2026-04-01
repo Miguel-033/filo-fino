@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const featuredSubtitle = document.getElementById("featuredCardsSubtitle");
   const categoryButtons = document.querySelectorAll(".blog-tag[data-category]");
 
-  if (!featuredGrid || !categoryButtons.length) return;
+  if (!featuredGrid) return;
 
   const featuredCardsByCategory = {
     all: {
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  function renderFeaturedCards(category) {
+  function renderFeaturedCards(category = "all") {
     const config =
       featuredCardsByCategory[category] || featuredCardsByCategory.all;
 
@@ -180,28 +180,30 @@ document.addEventListener("DOMContentLoaded", () => {
     featuredGrid.innerHTML = config.cards
       .map(
         (card) => `
-         <article class="blog-card">
-           <a class="blog-card__link" href="${card.href}">
-             <div class="blog-card__meta">${card.meta}</div>
-             <h3 class="blog-card__title">${card.title}</h3>
-             <div class="blog-card__cta">${card.cta}</div>
-           </a>
-         </article>
-       `
+          <article class="blog-card">
+            <a class="blog-card__link" href="${card.href}">
+              <div class="blog-card__meta">${card.meta}</div>
+              <h3 class="blog-card__title">${card.title}</h3>
+              <div class="blog-card__cta">${card.cta}</div>
+            </a>
+          </article>
+        `
       )
       .join("");
   }
 
+  // Делаем функцию доступной для blog-filter.js
+  window.renderFeaturedCards = renderFeaturedCards;
+
+  const params = new URLSearchParams(window.location.search);
+  const categoryFromUrl = params.get("category") || "all";
+
+  renderFeaturedCards(categoryFromUrl);
+
   categoryButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const category = button.dataset.category || "all";
-
-      categoryButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
       renderFeaturedCards(category);
     });
   });
-
-  renderFeaturedCards("all");
 });
