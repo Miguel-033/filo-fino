@@ -224,6 +224,13 @@ section {
   color: var(--primary);
 }
 
+.burger-overlay a:focus-visible,
+.close-btn:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid rgba(255, 102, 0, 0.85);
+  outline-offset: 3px;
+}
+
 .close-btn {
   position: absolute;
   top: 20px;
@@ -233,6 +240,15 @@ section {
   border: none;
   color: #fff;
   cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* ================================
@@ -323,7 +339,7 @@ footer a {
 }
 
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer-legal {
@@ -361,54 +377,8 @@ footer a:hover {
 }
 
 /* ================================
-   FLOATING CONTACT
-================================ */
-.floating-contact {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 1200;
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.floating-contact__toggle {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #ff6a00;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
-
-.floating-contact__panel {
-  display: none;
-}
-
-.floating-contact.is-open .floating-contact__panel {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.floating-contact__action {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ================================
    RESPONSIVE
 ================================ */
-@media (max-width: 991.98px) {
-  .floating-contact {
-    display: flex;
-  }
-}
-
 @media (max-width: 768px) {
   section {
     padding: 60px 0;
@@ -495,6 +465,55 @@ footer a:hover {
 .link-text,
 .link-text-cta {
   color: var(--primary) !important;
+}
+
+.link-text,
+.link-text-cta,
+.footer-legal a,
+footer a:not(.btn):not(.btn-style):not(.btn-styleNav),
+.blog-hero__badge a,
+.blog-hero__trust a {
+  position: relative;
+  text-decoration: none !important;
+}
+
+.blog-hero__badge a:hover,
+.blog-hero__trust a:hover {
+  text-decoration: none !important;
+}
+
+.link-text::after,
+.link-text-cta::after,
+.footer-legal a::after,
+footer a:not(.btn):not(.btn-style):not(.btn-styleNav)::after,
+.blog-hero__badge a::after,
+.blog-hero__trust a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.link-text:hover::after,
+.link-text-cta:hover::after,
+.footer-legal a:hover::after,
+footer a:not(.btn):not(.btn-style):not(.btn-styleNav):hover::after,
+.blog-hero__badge a:hover::after,
+.blog-hero__trust a:hover::after {
+  width: 100%;
+}
+
+.link-text:focus-visible::after,
+.link-text-cta:focus-visible::after,
+.footer-legal a:focus-visible::after,
+footer a:not(.btn):not(.btn-style):not(.btn-styleNav):focus-visible::after,
+.blog-hero__badge a:focus-visible::after,
+.blog-hero__trust a:focus-visible::after {
+  width: 100%;
 }
 
 .category-service-card a:hover,

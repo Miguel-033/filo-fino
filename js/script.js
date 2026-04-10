@@ -16,28 +16,105 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burgerMenu");
   const closeBurger = document.getElementById("closeBurger");
 
+  const getFocusable = (root) => {
+    if (!root) return [];
+    const selectors = [
+      'a[href]:not([tabindex="-1"])',
+      'button:not([disabled]):not([tabindex="-1"])',
+      'input:not([disabled]):not([tabindex="-1"])',
+      'select:not([disabled]):not([tabindex="-1"])',
+      'textarea:not([disabled]):not([tabindex="-1"])',
+      '[tabindex]:not([tabindex="-1"])',
+    ];
+    return Array.from(root.querySelectorAll(selectors.join(","))).filter(
+      (el) => {
+        const style = window.getComputedStyle(el);
+        return style.display !== "none" && style.visibility !== "hidden";
+      }
+    );
+  };
+
+  let lastFocusBeforeMenu = null;
+
+  const setMenuA11yState = (isOpen) => {
+    if (burgerToggle) burgerToggle.setAttribute("aria-expanded", String(isOpen));
+    if (burgerMenu) burgerMenu.setAttribute("aria-hidden", String(!isOpen));
+  };
+
+  const openBurger = () => {
+    if (!burgerMenu) return;
+    lastFocusBeforeMenu = document.activeElement;
+    burgerMenu.classList.add("open");
+    document.body.classList.add("overflow-hidden");
+    setMenuA11yState(true);
+
+    // Focus first meaningful control
+    const focusables = getFocusable(burgerMenu);
+    const first = focusables[0] || burgerMenu;
+    requestAnimationFrame(() => first.focus?.());
+  };
+
+  const closeBurgerMenu = () => {
+    if (!burgerMenu) return;
+    burgerMenu.classList.remove("open");
+    document.body.classList.remove("overflow-hidden");
+    setMenuA11yState(false);
+
+    const toRestore = lastFocusBeforeMenu;
+    lastFocusBeforeMenu = null;
+    requestAnimationFrame(() => toRestore?.focus?.());
+  };
+
   if (burgerToggle && burgerMenu) {
     burgerToggle.addEventListener("click", () => {
-      burgerMenu.classList.add("open");
-      document.body.classList.add("overflow-hidden");
+      if (burgerMenu.classList.contains("open")) closeBurgerMenu();
+      else openBurger();
     });
   }
 
   if (closeBurger && burgerMenu) {
     closeBurger.addEventListener("click", () => {
-      burgerMenu.classList.remove("open");
-      document.body.classList.remove("overflow-hidden");
+      closeBurgerMenu();
     });
   }
 
   if (burgerMenu) {
     burgerMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        burgerMenu.classList.remove("open");
-        document.body.classList.remove("overflow-hidden");
+        closeBurgerMenu();
       });
     });
   }
+
+  // Close on Escape + trap focus while open
+  document.addEventListener("keydown", (e) => {
+    if (!burgerMenu || !burgerMenu.classList.contains("open")) return;
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeBurgerMenu();
+      return;
+    }
+
+    if (e.key !== "Tab") return;
+    const focusables = getFocusable(burgerMenu);
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey && active === first) {
+      e.preventDefault();
+      last.focus();
+      return;
+    }
+
+    if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
 
   /* ===============================
      NAVBAR SCROLL

@@ -164,6 +164,45 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
+  /* Footer consistency (phone + Instagram link) */
+  const footer = document.querySelector("footer#contacto");
+  if (footer) {
+    // Ensure Instagram link block exists (some legal pages)
+    const hasInstagramLink = footer.querySelector("[data-instagram]");
+    const legalBox = footer.querySelector(".footer-legal");
+
+    if (!hasInstagramLink && legalBox) {
+      const p = document.createElement("p");
+      p.innerHTML = `
+        Compartimos ejemplos reales de trabajos, procesos de afilado y resultados antes y después en nuestro
+        <a data-instagram target="_blank" rel="noopener noreferrer">Instagram</a>.
+      `.trim();
+      legalBox.parentElement?.insertBefore(p, legalBox);
+    }
+
+    // Ensure phone line exists in contact column (articles/legal/blog often missing)
+    const alreadyInjectedPhone = footer.querySelector("[data-footer-phone]") !== null;
+    const hasPhoneLink = footer.querySelector('a[href^="tel:"]');
+    const whatsappLink = footer.querySelector("[data-whatsapp]");
+    const scheduleSpan = footer.querySelector("[data-schedule]");
+
+    if (!alreadyInjectedPhone && !hasPhoneLink && whatsappLink) {
+      const p = document.createElement("p");
+      p.setAttribute("data-footer-phone", "true");
+      p.innerHTML = `📞 <a href="tel:+${s.phone.raw}" class="link-text" rel="nofollow">${s.phone.display}</a>`;
+
+      // Put phone before schedule if possible, otherwise after WhatsApp link
+      const scheduleP = scheduleSpan?.closest("p");
+      if (scheduleP && scheduleP.parentElement) {
+        scheduleP.parentElement.insertBefore(p, scheduleP);
+      } else {
+        const whatsappP = whatsappLink.closest("p");
+        if (whatsappP) whatsappP.insertAdjacentElement("afterend", p);
+        else footer.appendChild(p);
+      }
+    }
+  }
+
   /* Legal pages */
   const LEGAL_PAGES = {
     aviso: "/legal/aviso-legal.html",
