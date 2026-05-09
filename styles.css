@@ -902,3 +902,7 @@ footer a:not(.btn):not(.btn-style):not(.btn-styleNav):focus-visible::after,
     bottom: 14px;
   }
 }
+.colorFont {
+  color: var(--primary);
+  font-size: 25px;
+}
