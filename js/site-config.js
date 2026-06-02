@@ -1,92 +1,3 @@
-// window.SITE = {
-//   phone: {
-//     display: "+34 614 00 50 53",
-//     raw: "34614005053",
-//   },
-
-//   whatsapp: {
-//     defaultText: "Hola, tengo una consulta sobre el afilado de herramientas.",
-//   },
-
-//   instagram: "https://www.instagram.com/filofino.es",
-
-//   address: {
-//     text: "Calle Maestro Guerrero, 4, Valencia",
-//     maps: "https://maps.app.goo.gl/Z4WQeCUKKeDbx8Qt7",
-//   },
-
-//   schedule: {
-//     weekdays: "Lunes a viernes: 10:00 – 17:30",
-//     lunch: "Descanso: 14:00 – 15:00",
-//     saturday: "Sábados: con cita previa",
-//     sunday: "Domingos: cerrado",
-//   },
-
-//   copyright: {
-//     brand: "Filo Fino",
-//     description: "Afilado profesional en Valencia",
-//   },
-// };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const s = window.SITE;
-
-//   /* Телефон */
-//   document.querySelectorAll("[data-phone]").forEach((el) => {
-//     el.textContent = s.phone.display;
-//     el.href = `tel:+${s.phone.raw}`;
-//   });
-
-//   /* WhatsApp */
-//   document.querySelectorAll("[data-whatsapp]").forEach((el) => {
-//     el.textContent = `WhatsApp: ${s.phone.display}`;
-//     el.href = `https://wa.me/${s.phone.raw}`;
-//   });
-
-//   /* Instagram */
-//   document.querySelectorAll("[data-instagram]").forEach((el) => {
-//     el.href = s.instagram;
-//   });
-
-//   /* Адрес */
-//   document.querySelectorAll("[data-address]").forEach((el) => {
-//     el.textContent = s.address.text;
-//     el.href = s.address.maps;
-//   });
-
-//   /* Расписание */
-//   document.querySelectorAll("[data-schedule]").forEach((el) => {
-//     el.innerHTML = `
-//       ${s.schedule.weekdays}<br />
-//       <small>${s.schedule.lunch}</small><br />
-//       ${s.schedule.saturday}<br />
-//       ${s.schedule.sunday}
-//     `;
-//   });
-
-//   /* Legal pages */
-//   const LEGAL_PAGES = {
-//     aviso: "/aviso-legal.html",
-//     privacy: "/politica-privacidad.html",
-//     cookies: "/politica-cookies.html",
-//   };
-
-//   document.addEventListener("DOMContentLoaded", () => {
-//     document.querySelectorAll("[data-legal]").forEach((el) => {
-//       const key = el.dataset.legal;
-//       if (LEGAL_PAGES[key]) {
-//         el.href = LEGAL_PAGES[key];
-//       }
-//     });
-//   });
-
-//   /* © Год */
-//   const year = new Date().getFullYear();
-//   document.querySelectorAll("[data-copyright]").forEach((el) => {
-//     el.innerHTML = `&copy; ${year} ${s.copyright.brand} · ${s.copyright.description}`;
-//   });
-// });
-
 window.SITE = {
   phone: {
     display: "+34 614 00 50 53",
@@ -181,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Ensure phone line exists in contact column (articles/legal/blog often missing)
-    const alreadyInjectedPhone = footer.querySelector("[data-footer-phone]") !== null;
+    const alreadyInjectedPhone =
+      footer.querySelector("[data-footer-phone]") !== null;
     const hasPhoneLink = footer.querySelector('a[href^="tel:"]');
     const whatsappLink = footer.querySelector("[data-whatsapp]");
     const scheduleSpan = footer.querySelector("[data-schedule]");
@@ -255,6 +167,31 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   document.body.appendChild(floatingWidget);
+
+  /* Article inline CTA — inject after first .blog-highlight */
+  const blogArticle = document.querySelector(".blog-article[data-category]");
+  if (blogArticle) {
+    const cat = blogArticle.dataset.category;
+    const ctaMap = {
+      cuchillos:  { text: "Cuchillos desde <strong>5€</strong>, listos en <strong>15 minutos</strong>.",    msg: "Hola, quiero afilar cuchillos. ¿Cuándo puedo pasarme?" },
+      peluqueria: { text: "Tijeras de peluquería desde <strong>17€</strong>, listo en el día.",              msg: "Hola, quiero afilar tijeras de peluquería. ¿Cuándo puedo pasarme?" },
+      maquinas:   { text: "Cuchillas de máquina desde <strong>13€</strong>, listo en el día.",              msg: "Hola, quiero revisar el bloque de mi máquina. ¿Cuándo puedo pasarme?" },
+      manicura:   { text: "Herramientas de manicura desde <strong>5€</strong>, listo en el día.",           msg: "Hola, quiero afilar herramientas de manicura. ¿Cuándo puedo pasarme?" },
+      reparacion: { text: "Evaluación gratuita en taller. Reparaciones <strong>desde 15€</strong>.",        msg: "Hola, quiero saber si mi herramienta tiene solución. ¿Puedo pasarme?" },
+      precios:    { text: "Envíame una foto y te digo el precio <strong>enseguida</strong>.",               msg: "Hola, ¿me puedes decir cuánto cuesta afilar mi herramienta?" },
+    };
+    const d = ctaMap[cat] || ctaMap["cuchillos"];
+    const highlight = blogArticle.querySelector(".blog-highlight");
+    if (highlight) {
+      const cta = document.createElement("div");
+      cta.className = "article-inline-cta";
+      cta.innerHTML = `<p class="mb-2">¿Necesitas solucionarlo ya? ${d.text}</p>
+        <a href="${buildWhatsAppUrl(d.msg)}" target="_blank" rel="noopener noreferrer" class="btn-style" style="font-size:0.9rem;padding:10px 22px;">
+          <i class="bi bi-whatsapp me-1"></i>Escríbeme por WhatsApp
+        </a>`;
+      highlight.insertAdjacentElement("afterend", cta);
+    }
+  }
 
   const toggleBtn = floatingWidget.querySelector(".floating-contact__toggle");
   const panel = floatingWidget.querySelector(".floating-contact__panel");

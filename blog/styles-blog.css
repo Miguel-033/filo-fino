@@ -164,6 +164,7 @@
 
 .videoBlogWrap {
   width: 100%;
+  height: 500px;
   aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: 18px;
@@ -370,9 +371,30 @@
 ================================ */
 
 .blog-article h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
   line-height: 1.25;
+}
+
+.blog-article h2:first-child,
+.blog-article .blog-highlight + h2 {
+  margin-top: 0;
+}
+
+.blog-article .blog-cta + h2 {
+  margin-top: 1rem;
+}
+
+.blog-article .accordion {
+  margin-top: 0.35rem;
+}
+
+.blog-article h2 + .accordion {
+  margin-top: 0.15rem;
+}
+
+.blog-article .blog-cta {
+  margin-bottom: 0.5rem;
 }
 
 .blog-article p {
@@ -503,6 +525,29 @@
   margin-bottom: 1rem;
 }
 
+/* Related service link — visually subdued, distinct from the main CTA */
+.blog-service-link {
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+
+.blog-service-link h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.blog-service-link p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
 .blog-cta a[href="/"] {
   font-weight: 600;
   text-decoration: underline;
@@ -625,26 +670,40 @@
   }
 
   .blog-sidebar-col {
-    order: -1; /* 👉 поднимаем вверх */
+    order: -1;
     width: 100%;
   }
 
   .blog-sidebar__sticky {
-    position: static; /* 👉 убираем sticky */
+    position: static;
+  }
+
+  /* Contact and tip boxes are redundant on mobile — floating widget covers them */
+  .blog-sidebar__sticky .blog-sidebar__box:nth-child(1),
+  .blog-sidebar__sticky .blog-sidebar__box:nth-child(2) {
+    display: none;
+  }
+
+  /* Categories filter: compact horizontal row */
+  .blog-sidebar__sticky .blog-sidebar__box:nth-child(3) {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+
+  .blog-sidebar__sticky .blog-sidebar__box:nth-child(3) .blog-sidebar__title {
+    display: none;
+  }
+
+  .blog-sidebar__sticky .blog-sidebar__box:nth-child(3) .blog-sidebar__hint {
+    display: none;
   }
 }
-@media (max-width: 1023.98px) {
-  .blog-layout {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .blog-sidebar-col {
-    order: -1; /* 👉 поднимаем вверх */
-    width: 100%;
-  }
+/* Linked article cards: orange left border accent + bottom strip on hover */
+.blog-card:has(a.blog-card__link) {
+  border-left: 3px solid var(--primary);
+}
 
-  .blog-sidebar__sticky {
-    position: static; /* 👉 убираем sticky */
-  }
+.blog-card:has(a.blog-card__link):hover {
+  box-shadow: 0 14px 30px rgba(255, 102, 0, 0.18);
 }
