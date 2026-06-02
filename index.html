@@ -46,6 +46,14 @@
 
     <link rel="canonical" href="https://filofino.es/" />
 
+    <!-- Preconnect to CDNs for faster resource loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
+    <!-- Preload hero background image (LCP element) -->
+    <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high" />
+
+    <!-- Bootstrap CSS (critical – keep render-blocking) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -53,19 +61,42 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- AOS -->
+
+    <!-- AOS – non-critical, load async to avoid render-blocking -->
     <link
+      rel="preload"
       href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9"
       crossorigin="anonymous"
     />
+    <noscript>
+      <link
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet"
+        integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9"
+        crossorigin="anonymous"
+      />
+    </noscript>
+
+    <!-- Bootstrap Icons – non-critical, load async -->
     <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
       crossorigin="anonymous"
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD"
+        crossorigin="anonymous"
+      />
+    </noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -304,6 +335,8 @@
                 src="images/filo-fino-interior-taller-afilado-valencia.webp"
                 alt="Taller de afilado profesional en Valencia"
                 class="img-fluid rounded-4 shadow"
+                width="900"
+                height="1200"
                 decoding="async"
                 fetchpriority="high"
               />
@@ -326,9 +359,9 @@
               Taller especializado en Valencia
             </h2>
             <p class="text-secondary mb-3 mb-lg-0">
-              <strong>Filo Fino</strong> es un taller dedicado exclusivamente
-              al afilado y ajuste de herramientas. Sin mostrador de venta:
-              el foco es el servicio y el resultado.
+              <strong>Filo Fino</strong> es un taller dedicado exclusivamente al
+              afilado y ajuste de herramientas. Sin mostrador de venta: el foco
+              es el servicio y el resultado.
             </p>
           </div>
           <div class="col-lg-7">
@@ -449,6 +482,8 @@
                 src="images/tijeras_tiran.webp"
                 alt="Afilado de tijeras de peluquería en Valencia"
                 class="img-fluid rounded-4 mb-3"
+                width="800"
+                height="1740"
                 loading="lazy"
                 decoding="async"
               />
@@ -466,12 +501,18 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <article class="service-card h-100">
               <img
                 src="images/Cuchillos.webp"
                 alt="Afilado de cuchillos en Valencia"
                 class="img-fluid rounded-4 mb-3"
+                width="600"
+                height="450"
                 loading="lazy"
                 decoding="async"
               />
@@ -489,12 +530,18 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <article class="service-card h-100">
               <img
                 src="images/Heramientas-manicura.webp"
                 alt="Afilado de herramientas de manicura en Valencia"
                 class="img-fluid rounded-4 mb-3"
+                width="600"
+                height="1305"
                 loading="lazy"
                 decoding="async"
               />
@@ -512,12 +559,18 @@
             </article>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <article class="service-card h-100">
               <img
                 src="images/cuchillos_psrs_maquina.webp"
                 alt="Mantenimiento y cuchillas de máquina"
                 class="img-fluid rounded-4 mb-3"
+                width="600"
+                height="450"
                 loading="lazy"
                 decoding="async"
               />
@@ -556,7 +609,7 @@
               <video
                 class="w-100 rounded-4 mb-3"
                 controls
-                preload="metadata"
+                preload="none"
                 playsinline
                 poster="images/tijeras_tiran.webp"
               >
@@ -572,12 +625,16 @@
             </div>
           </div>
 
-          <div class="video-scroll-item" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="video-scroll-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="real-work-card h-100">
               <video
                 class="w-100 rounded-4 mb-3"
                 controls
-                preload="metadata"
+                preload="none"
                 playsinline
                 poster="images/cuchillo_para_profecional01.webp"
               >
@@ -594,12 +651,16 @@
             </div>
           </div>
 
-          <div class="video-scroll-item" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="video-scroll-item"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="real-work-card h-100">
               <video
                 class="w-100 rounded-4 mb-3"
                 controls
-                preload="metadata"
+                preload="none"
                 playsinline
                 poster="images/Heramientas-manicura.webp"
               >
@@ -640,7 +701,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="step-card h-100">
               <div class="step-number">2</div>
               <h3>Revisión</h3>
@@ -650,7 +715,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="step-card h-100">
               <div class="step-number">3</div>
               <h3>Trabajo</h3>
@@ -661,7 +730,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div class="step-card h-100">
               <div class="step-number">4</div>
               <h3>Comprobación</h3>
@@ -698,7 +771,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="problem-card">
               <div class="problem-card__accent"></div>
               <h3>El cuchillo ya no corta limpio</h3>
@@ -709,7 +786,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="problem-card">
               <div class="problem-card__accent"></div>
               <h3>El alicate desgarra</h3>
@@ -731,7 +812,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="problem-card">
               <div class="problem-card__accent"></div>
               <h3>Después de afilar, corta peor</h3>
@@ -742,7 +827,11 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="problem-card">
               <div class="problem-card__accent"></div>
               <h3>No sabes si merece la pena arreglarla</h3>
@@ -762,17 +851,21 @@
         <div class="text-center mb-4">
           <h2>Lo que dicen mis clientes</h2>
           <p class="text-secondary mb-0">
-            Opiniones reales de personas que han confiado sus herramientas al taller.
+            Opiniones reales de personas que han confiado sus herramientas al
+            taller.
           </p>
         </div>
 
         <div class="reviews-carousel-wrap">
           <div class="rc" id="rc">
-
             <div class="rc__item rc__item--active">
               <div class="review-card-carousel">
                 <div class="review-card-carousel__stars">★★★★★</div>
-                <p class="review-card-carousel__text">"Llevaba meses con las tijeras tirando del pelo. Las traje, las revisó y me explicó exactamente qué tenían. Volvieron a cortar como el primer día."</p>
+                <p class="review-card-carousel__text">
+                  "Llevaba meses con las tijeras tirando del pelo. Las traje,
+                  las revisó y me explicó exactamente qué tenían. Volvieron a
+                  cortar como el primer día."
+                </p>
                 <div class="review-card-carousel__author">
                   <div class="review-card-carousel__avatar">M</div>
                   <div class="review-card-carousel__author-info">
@@ -786,7 +879,11 @@
             <div class="rc__item">
               <div class="review-card-carousel">
                 <div class="review-card-carousel__stars">★★★★★</div>
-                <p class="review-card-carousel__text">"Traje varios cuchillos de cocina y en menos de media hora los tenía listos. Revisó cada uno antes de tocarlos y me explicó el estado real de cada filo."</p>
+                <p class="review-card-carousel__text">
+                  "Traje varios cuchillos de cocina y en menos de media hora los
+                  tenía listos. Revisó cada uno antes de tocarlos y me explicó
+                  el estado real de cada filo."
+                </p>
                 <div class="review-card-carousel__author">
                   <div class="review-card-carousel__avatar">J</div>
                   <div class="review-card-carousel__author-info">
@@ -800,7 +897,11 @@
             <div class="rc__item">
               <div class="review-card-carousel">
                 <div class="review-card-carousel__stars">★★★★★</div>
-                <p class="review-card-carousel__text">"Mis alicates desgarraban la cutícula desde hacía tiempo. Ahora cortan limpio y sin esfuerzo. Muy buena atención y precio razonable."</p>
+                <p class="review-card-carousel__text">
+                  "Mis alicates desgarraban la cutícula desde hacía tiempo.
+                  Ahora cortan limpio y sin esfuerzo. Muy buena atención y
+                  precio razonable."
+                </p>
                 <div class="review-card-carousel__author">
                   <div class="review-card-carousel__avatar">L</div>
                   <div class="review-card-carousel__author-info">
@@ -814,7 +915,11 @@
             <div class="rc__item">
               <div class="review-card-carousel">
                 <div class="review-card-carousel__stars">★★★★★</div>
-                <p class="review-card-carousel__text">"Las tijeras Convex estaban arruinadas por un mal afilado anterior. Las restauró completamente: no solo las afiló, también las ajustó. Resultado perfecto."</p>
+                <p class="review-card-carousel__text">
+                  "Las tijeras Convex estaban arruinadas por un mal afilado
+                  anterior. Las restauró completamente: no solo las afiló,
+                  también las ajustó. Resultado perfecto."
+                </p>
                 <div class="review-card-carousel__author">
                   <div class="review-card-carousel__avatar">A</div>
                   <div class="review-card-carousel__author-info">
@@ -824,18 +929,28 @@
                 </div>
               </div>
             </div>
-
           </div>
 
-          <button class="reviews-control reviews-control--prev" type="button" aria-label="Anterior">
+          <button
+            class="reviews-control reviews-control--prev"
+            type="button"
+            aria-label="Anterior"
+          >
             <i class="bi bi-chevron-left"></i>
           </button>
-          <button class="reviews-control reviews-control--next" type="button" aria-label="Siguiente">
+          <button
+            class="reviews-control reviews-control--next"
+            type="button"
+            aria-label="Siguiente"
+          >
             <i class="bi bi-chevron-right"></i>
           </button>
 
           <div class="reviews-dots" id="rcDots">
-            <button class="reviews-dots__dot reviews-dots__dot--active" aria-label="Reseña 1"></button>
+            <button
+              class="reviews-dots__dot reviews-dots__dot--active"
+              aria-label="Reseña 1"
+            ></button>
             <button class="reviews-dots__dot" aria-label="Reseña 2"></button>
             <button class="reviews-dots__dot" aria-label="Reseña 3"></button>
             <button class="reviews-dots__dot" aria-label="Reseña 4"></button>
@@ -843,7 +958,12 @@
         </div>
 
         <div class="text-center mt-4">
-          <a data-whatsapp target="_blank" class="btn-style" style="padding: 11px 28px; font-size: 0.95rem;">
+          <a
+            data-whatsapp
+            target="_blank"
+            class="btn-style"
+            style="padding: 11px 28px; font-size: 0.95rem"
+          >
             Escríbeme por WhatsApp
           </a>
         </div>
@@ -861,6 +981,8 @@
                 src="images/photo_taller_logo01.webp"
                 alt="Taller de afilado profesional en Valencia"
                 class="about-img"
+                width="675"
+                height="900"
                 loading="lazy"
                 decoding="async"
               />
@@ -869,14 +991,12 @@
 
           <!-- Правая колонка с текстом -->
           <div class="col-md-6" data-aos="fade-left">
-            <h2 class="fw-bold mb-3" style="margin-top: 10px">
-              Sobre mí
-            </h2>
+            <h2 class="fw-bold mb-3" style="margin-top: 10px">Sobre mí</h2>
 
             <p>
-              En <strong>Filo Fino</strong> me dedico al afilado profesional
-              y la restauración de herramientas de trabajo: tijeras de
-              peluquería, instrumentos de manicura y cuchillos de cocina.
+              En <strong>Filo Fino</strong> me dedico al afilado profesional y
+              la restauración de herramientas de trabajo: tijeras de peluquería,
+              instrumentos de manicura y cuchillos de cocina.
             </p>
 
             <p>
@@ -888,9 +1008,9 @@
             </p>
 
             <p>
-              Con frecuencia recibo herramientas que han sido afiladas de
-              forma incorrecta: geometría alterada, material retirado en exceso
-              o ángulos inadecuados. En estos casos, el trabajo consiste en
+              Con frecuencia recibo herramientas que han sido afiladas de forma
+              incorrecta: geometría alterada, material retirado en exceso o
+              ángulos inadecuados. En estos casos, el trabajo consiste en
               restaurar el instrumento, no simplemente volver a afilarlo.
             </p>
 
@@ -899,9 +1019,9 @@
             </h3>
 
             <p>
-              Trabajo en mi taller en Valencia, atendiendo también a
-              clientes de Torrent, Paterna, Burjassot y otras zonas cercanas,
-              así como envíos desde toda España.
+              Trabajo en mi taller en Valencia, atendiendo también a clientes de
+              Torrent, Paterna, Burjassot y otras zonas cercanas, así como
+              envíos desde toda España.
             </p>
           </div>
         </div>
@@ -1367,21 +1487,23 @@
     </div>
 
     <!-- Scripts -->
-    <script src="./js/script.js"></script>
-    <script src="./js/site-config.js"></script>
-    <script src="./js/carousel.js"></script>
+    <script src="./js/script.js" defer></script>
+    <script src="./js/site-config.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
+      defer
     ></script>
     <script
       src="https://unpkg.com/aos@2.3.1/dist/aos.js"
       integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu"
       crossorigin="anonymous"
+      defer
+      onload="AOS.init()"
     ></script>
     <script>
-      AOS.init();
+      /* AOS.init() is now called via onload on the AOS script tag above */
     </script>
   </body>
 </html>

@@ -128,7 +128,7 @@ section {
   justify-content: center;
   text-align: center;
   color: #fff;
-  background: url("images/hero.jpg") center / cover no-repeat;
+  background: url("images/hero.webp") center / cover no-repeat;
   position: relative;
 }
 
