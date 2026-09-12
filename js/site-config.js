@@ -16,8 +16,8 @@ window.SITE = {
   },
 
   schedule: {
-    weekdays: "Lunes a viernes: 10:00 – 17:30",
-    lunch: "Descanso: 14:00 – 15:00",
+    weekdays: "Lunes a viernes: ",
+    lunch: "10:00 – 14:00 y 17:00 – 20:00",
     saturday: "Sábados: con cita previa",
     sunday: "Domingos: cerrado",
   },
@@ -173,12 +173,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (blogArticle) {
     const cat = blogArticle.dataset.category;
     const ctaMap = {
-      cuchillos:  { text: "Cuchillos desde <strong>5€</strong>, listos en <strong>15 minutos</strong>.",    msg: "Hola, quiero afilar cuchillos. ¿Cuándo puedo pasarme?" },
-      peluqueria: { text: "Tijeras de peluquería desde <strong>17€</strong>, listo en el día.",              msg: "Hola, quiero afilar tijeras de peluquería. ¿Cuándo puedo pasarme?" },
-      maquinas:   { text: "Cuchillas de máquina desde <strong>13€</strong>, listo en el día.",              msg: "Hola, quiero revisar el bloque de mi máquina. ¿Cuándo puedo pasarme?" },
-      manicura:   { text: "Herramientas de manicura desde <strong>5€</strong>, listo en el día.",           msg: "Hola, quiero afilar herramientas de manicura. ¿Cuándo puedo pasarme?" },
-      reparacion: { text: "Evaluación gratuita en taller. Reparaciones <strong>desde 15€</strong>.",        msg: "Hola, quiero saber si mi herramienta tiene solución. ¿Puedo pasarme?" },
-      precios:    { text: "Envíame una foto y te digo el precio <strong>enseguida</strong>.",               msg: "Hola, ¿me puedes decir cuánto cuesta afilar mi herramienta?" },
+      cuchillos: {
+        text: "Cuchillos desde <strong>5€</strong>, listos en <strong>15 minutos</strong>.",
+        msg: "Hola, quiero afilar cuchillos. ¿Cuándo puedo pasarme?",
+      },
+      peluqueria: {
+        text: "Tijeras de peluquería desde <strong>17€</strong>, listo en el día.",
+        msg: "Hola, quiero afilar tijeras de peluquería. ¿Cuándo puedo pasarme?",
+      },
+      maquinas: {
+        text: "Cuchillas de máquina desde <strong>13€</strong>, listo en el día.",
+        msg: "Hola, quiero revisar el bloque de mi máquina. ¿Cuándo puedo pasarme?",
+      },
+      manicura: {
+        text: "Herramientas de manicura desde <strong>5€</strong>, listo en el día.",
+        msg: "Hola, quiero afilar herramientas de manicura. ¿Cuándo puedo pasarme?",
+      },
+      reparacion: {
+        text: "Evaluación gratuita en taller. Reparaciones <strong>desde 15€</strong>.",
+        msg: "Hola, quiero saber si mi herramienta tiene solución. ¿Puedo pasarme?",
+      },
+      precios: {
+        text: "Envíame una foto y te digo el precio <strong>enseguida</strong>.",
+        msg: "Hola, ¿me puedes decir cuánto cuesta afilar mi herramienta?",
+      },
     };
     const d = ctaMap[cat] || ctaMap["cuchillos"];
     const highlight = blogArticle.querySelector(".blog-highlight");
@@ -186,7 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const cta = document.createElement("div");
       cta.className = "article-inline-cta";
       cta.innerHTML = `<p class="mb-2">¿Necesitas solucionarlo ya? ${d.text}</p>
-        <a href="${buildWhatsAppUrl(d.msg)}" target="_blank" rel="noopener noreferrer" class="btn-style" style="font-size:0.9rem;padding:10px 22px;">
+        <a href="${buildWhatsAppUrl(
+          d.msg
+        )}" target="_blank" rel="noopener noreferrer" class="btn-style" style="font-size:0.9rem;padding:10px 22px;">
           <i class="bi bi-whatsapp me-1"></i>Escríbeme por WhatsApp
         </a>`;
       highlight.insertAdjacentElement("afterend", cta);
